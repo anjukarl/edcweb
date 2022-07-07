@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: #569671; // rgb(86, 150, 113)
+$secondary: #fada5f; // rgb(250, 218, 95)
+
+$primary-light: #bbd5c6; // rgb(187, 213, 198)
+$secondary-light: #fdedaf; // rgb(253, 237, 175)
+
+// $main-bg: #eeeeee; // rgb(238, 238, 238)
+
+$font-family-sans-serif: "Open Sans", Roboto, system-ui, -apple-system,
+  "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji";
+
+$enable-gradients: true;
+$enable-shadows: true;
+
+@import "../node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,17 @@
+.logo {
+  width: 15vw;
+}
+
+#navmenu {
+  // font-size: 0.9rem;
+  font-style: italic;
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.active-link {
+  font-weight: bold;
+  font-size: 1rem;
+}
