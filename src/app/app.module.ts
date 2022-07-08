@@ -10,6 +10,9 @@ import { AboutComponent } from './components/about/about.component';
 import { WordftdComponent } from './components/wordftd/wordftd.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SubheadComponent } from './shared/subhead/subhead.component';
+import { GentorevComponent } from './components/gentorev/gentorev.component';
+import { ResourcesComponent } from './components/resources/resources.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     WordftdComponent,
     VideosComponent,
-    ContactComponent
+    ContactComponent,
+    SubheadComponent,
+    GentorevComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,

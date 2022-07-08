@@ -15,3 +15,7 @@ $enable-gradients: true;
 $enable-shadows: true;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.banner {
+  height: 55vh;
+}

@@ -1,10 +1,13 @@
+.topnav {
+  background-color: rgb(187, 213, 198, 0.5);
+}
+
 .logo {
   width: 15vw;
 }
 
 #navmenu {
-  // font-size: 0.9rem;
-  font-style: italic;
+  font-size: 0.9rem;
 
   a:hover {
     text-decoration: underline;
@@ -13,5 +16,4 @@
 
 .active-link {
   font-weight: bold;
-  font-size: 1rem;
 }
