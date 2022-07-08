@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "audio",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "book",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

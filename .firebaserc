@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "audiotest-57c98": {
+      "hosting": {
+        "edcweb": [
+          "audiotest-57c98"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "audiotest-57c98"
+  }
+}

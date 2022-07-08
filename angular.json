@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "edcweb:build:production",
+            "firebaseProject": "audiotest-57c98",
+            "firebaseHostingSite": "audiotest-57c98"
+          }
         }
       }
     }
