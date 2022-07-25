@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gentorev.component.scss'],
 })
 export class GentorevComponent implements OnInit {
-  heading = 'Genesis to Revelation';
+  heading = 'Daily Word - Audio';
 
   constructor() {}
 

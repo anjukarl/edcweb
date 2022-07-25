@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./videos.component.scss'],
 })
 export class VideosComponent implements OnInit {
-  heading = 'Sermon videos';
+  heading = 'Video Resources';
 
   constructor() {}
 

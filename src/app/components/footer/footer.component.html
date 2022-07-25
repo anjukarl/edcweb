@@ -1,41 +1,6 @@
 <div class="container-fluid vh-10 bg-primary">
-  <!-- <div class="container"> -->
-
   <div class="row align-items-center">
-    <div class="col-md-5 text-center">
-      <div class="row soc-blocks">
-        <a routerLink="about" class="text-secondary social text-decoration-none"
-          >About</a
-        >|
-        <a
-          routerLink="gentorev"
-          class="text-secondary social text-decoration-none"
-          >Gen-Rev</a
-        >|
-        <a
-          routerLink="wordftd"
-          class="text-secondary social text-decoration-none"
-          >Daily Word</a
-        >|
-        <a
-          routerLink="videos"
-          class="text-secondary social text-decoration-none"
-          >Videos</a
-        >|
-        <a
-          routerLink="resources"
-          class="text-secondary social text-decoration-none"
-          >Resources</a
-        >|
-        <a
-          routerLink="contact"
-          class="text-secondary social text-decoration-none"
-          >Contact</a
-        >
-      </div>
-    </div>
-
-    <div class="col-md-2 py-3 text-center">
+    <div class="col-md-4 py-3 text-center">
       <img
         src="../../../assets/econ.png"
         alt="Ft-Logo"
@@ -43,7 +8,7 @@
       />
     </div>
 
-    <div class="col-md-5 text-center">
+    <div class="col-md-4 text-center">
       <div class="row inblock">
         <a
           href="https://facebook.com/"
@@ -64,27 +29,31 @@
           ><i class="bi bi-instagram"></i
         ></a>
         <a
-          href="https://linkedin.com/"
+          href="https://open.spotify.com/show/0v51nnk1ZJRcbDyvCk7z00?si=rsvXP8rDRhi7C2A9DkfkXQ/"
           class="text-secondary social text-decoration-none"
           target="_blank"
-          ><i class="bi bi-linkedin"></i
+          ><i class="bi bi-spotify"></i
         ></a>
         <a
-          href="https://twitter.com/"
+          href="https://www.apple.com/in/apple-podcasts/"
           class="text-secondary social text-decoration-none"
           target="_blank"
-          ><i class="bi bi-twitter"></i
-        ></a>
-        <a
-          href="mailto: edchelladurai@gmail.com"
-          class="text-secondary social text-decoration-none"
-          ><i class="bi bi-envelope-fill"></i
+          ><i class="bi bi-apple"></i
         ></a>
       </div>
       <div class="row mt-md-2">
         <p class="copy">&copy; edchelladurai.com 2022</p>
       </div>
     </div>
+
+    <div class="col-md-4 text-center">
+      <button
+        class="btn btn-secondary topofpage"
+        type="button"
+        (click)="goTopOfPage()"
+      >
+        <i class="bi bi-arrow-up-circle-fill"></i>
+      </button>
+    </div>
   </div>
-  <!-- </div> -->
 </div>

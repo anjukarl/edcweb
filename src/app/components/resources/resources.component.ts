@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resources.component.scss'],
 })
 export class ResourcesComponent implements OnInit {
-  heading = 'Resources - books & songs';
+  heading = 'Messages from other servants of God';
 
   constructor() {}
 

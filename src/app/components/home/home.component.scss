@@ -1,76 +1,6 @@
 .homepic {
-  height: 70vh;
-  background-image: linear-gradient(
-      to bottom,
-      rgb(250, 218, 95, 0.8),
-      rgb(253, 237, 175, 0.8)
-    ),
-    url(../../../assets/homepic.jpg);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.home-text {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-
-  &--main {
-    display: block;
-    font-size: 3rem;
-    font-weight: 400;
-    letter-spacing: 1rem;
-    text-align: center;
-    animation: moveInLeft 1s ease-out;
-  }
-
-  &--sub {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 1rem;
-    text-align: center;
-    animation: moveInRight 1s ease-out;
-  }
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-6.25rem);
-  }
-
-  80% {
-    transform: translateX(0.625rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(6.25rem);
-  }
-
-  80% {
-    transform: translateX(-0.625rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.main {
-  margin-bottom: 4rem;
+  height: 50vw;
+  background-color: #569671;
 }
 
 .title {
@@ -119,4 +49,38 @@
     font-size: 0.8rem;
     margin: auto;
   }
+}
+
+.hd-logo {
+  width: 6vw;
+  display: inline-block;
+}
+
+.topnav {
+  background-color: #569671;
+}
+
+#navmenu {
+  font-size: 0.9rem;
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.active-link {
+  font-weight: bold;
+}
+
+.edcimg {
+  display: flex;
+  justify-content: center;
+}
+
+.mainlogo {
+  width: 80vw;
+}
+
+.ddmenu {
+  font-size: 0.9rem;
 }

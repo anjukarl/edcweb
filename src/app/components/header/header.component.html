@@ -19,7 +19,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item px-2">
           <a
-            routerLink="about"
+            routerLink="/about"
             class="nav-link text-primary"
             routerLinkActive="active-link"
             >About</a
@@ -27,39 +27,88 @@
         </li>
         <li class="nav-item px-2">
           <a
-            routerLink="gentorev"
+            routerLink="/videos"
             class="nav-link text-primary"
             routerLinkActive="active-link"
-            >Gen-Rev</a
+            >Messages</a
           >
         </li>
-        <li class="nav-item px-2">
+
+        <li class="nav-item dropdown px-2">
           <a
-            routerLink="wordftd"
-            class="nav-link text-primary"
+            class="nav-link text-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
             routerLinkActive="active-link"
+            type="button"
             >Daily Word</a
           >
+          <ul class="dropdown-menu dropdown-menu-dark bg-primary ddmenu">
+            <li>
+              <a
+                class="dropdown-item text-decoration-none"
+                routerLink="/gentorev"
+                >Audio</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item text-decoration-none"
+                routerLink="/wordftdv"
+                >Video</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item text-decoration-none"
+                routerLink="/wordftd"
+                >Text</a
+              >
+            </li>
+          </ul>
         </li>
-        <li class="nav-item px-2">
+
+        <li class="nav-item dropdown px-2">
           <a
-            routerLink="videos"
-            class="nav-link text-primary"
+            class="nav-link text-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
             routerLinkActive="active-link"
-            >Videos</a
-          >
-        </li>
-        <li class="nav-item px-2">
-          <a
-            routerLink="resources"
-            class="nav-link text-primary"
-            routerLinkActive="active-link"
+            type="button"
             >Resources</a
           >
+          <ul class="dropdown-menu dropdown-menu-dark bg-primary ddmenu">
+            <li>
+              <a class="dropdown-item text-decoration-none" routerLink="/audios"
+                >Audio</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-decoration-none" routerLink="/videos"
+                >Video</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-decoration-none" routerLink="/books"
+                >Books</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-decoration-none" routerLink="/qanda"
+                >Q and A</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item text-decoration-none"
+                routerLink="/resources"
+                >Other's Messages</a
+              >
+            </li>
+          </ul>
         </li>
+
         <li class="nav-item px-2">
           <a
-            routerLink="contact"
+            routerLink="/contact"
             class="nav-link text-primary"
             routerLinkActive="active-link"
             >Contact</a
