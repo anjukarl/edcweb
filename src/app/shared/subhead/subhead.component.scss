@@ -1,10 +1,11 @@
 .subhead {
   background-image: linear-gradient(
       to bottom,
-      rgb(250, 218, 95, 0.8),
-      rgb(253, 237, 175, 0.8)
+      rgb(242, 242, 242, 0.8),
+      rgb(242, 242, 242, 0.8)
     ),
     url(../../../assets/homepic.jpg);
-  padding: 2rem 4rem;
+  padding: 8rem 10rem;
   align-items: center;
+  height: 50vh;
 }

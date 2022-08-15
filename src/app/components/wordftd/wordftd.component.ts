@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wordftd.component.scss'],
 })
 export class WordftdComponent implements OnInit {
-  heading = 'Daily Word - Text';
+  heading = 'Daily Word - Audio & Text';
+  verse =
+    'In the beginning was the Word, and the Word was with God, and the Word was God.';
 
   constructor() {}
 

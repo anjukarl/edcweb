@@ -47,7 +47,7 @@
                 <li>
                   <a
                     class="dropdown-item text-decoration-none"
-                    routerLink="/gentorev"
+                    routerLink="/wordftd"
                     >Audio</a
                   >
                 </li>
@@ -78,18 +78,48 @@
               >
               <ul class="dropdown-menu dropdown-menu-dark bg-primary ddmenu">
                 <li>
-                  <a
-                    class="dropdown-item text-decoration-none"
-                    routerLink="/audios"
-                    >Audio</a
+                  <a class="dropdown-item text-decoration-none" href="#"
+                    >Audio &raquo;</a
                   >
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark bg-primary dropdown-submenu"
+                  >
+                    <li>
+                      <a routerLink="/audios" class="dropdown-item"
+                        >With the Bible</a
+                      >
+                    </li>
+                    <li>
+                      <a routerLink="/wordftd" class="dropdown-item"
+                        >Daily Word</a
+                      >
+                    </li>
+                    <li>
+                      <a routerLink="/qanda" class="dropdown-item">Q and A</a>
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item text-decoration-none"
-                    routerLink="/videos"
-                    >Video</a
+                  <a class="dropdown-item text-decoration-none" href="#"
+                    >Video &raquo;</a
                   >
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark bg-primary dropdown-submenu"
+                  >
+                    <li>
+                      <a routerLink="/gentorev" class="dropdown-item"
+                        >With the Bible</a
+                      >
+                    </li>
+                    <li>
+                      <a routerLink="wordftdv" class="dropdown-item"
+                        >Daily Word</a
+                      >
+                    </li>
+                    <li>
+                      <a routerLink="/videos" class="dropdown-item">Sermons</a>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <a
@@ -132,7 +162,7 @@
     <img src="../../../assets/edclogo.png" alt="Logo" class="mainlogo" />
   </div>
 </div>
-<main class="container mb-4">
+<main class="container mb-5">
   <div class="row title">
     <div class="col-12">Highlights</div>
   </div>
@@ -221,7 +251,7 @@
     form. Alternately, you could connect with us on social media using the links
     below.
   </p>
-  <a routerLink="contact" class="btn btn-secondary text-dark px-xxl-4 shadow"
+  <a routerLink="contact" class="btn btn-primary text-light px-xxl-4 shadow"
     >Contact us</a
   >
 </div>

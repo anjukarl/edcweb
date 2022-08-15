@@ -1,6 +1,13 @@
 .homepic {
-  height: 50vw;
-  background-color: #569671;
+  height: 40vw;
+  background-image: linear-gradient(
+      to bottom,
+      rgb(86, 150, 113, 0.9),
+      rgb(86, 150, 113, 0.8)
+    ),
+    url(../../../assets/homepic.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .title {
@@ -28,14 +35,7 @@
 }
 
 .home-cont {
-  background-image: linear-gradient(
-      to bottom,
-      rgb(250, 218, 95, 0.8),
-      rgb(253, 237, 175, 0.8)
-    ),
-    url(../../../assets/homepic.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: rgb(253, 237, 175);
   padding: 2rem 4rem;
   align-items: center;
 
@@ -56,10 +56,6 @@
   display: inline-block;
 }
 
-.topnav {
-  background-color: #569671;
-}
-
 #navmenu {
   font-size: 0.9rem;
 
@@ -78,7 +74,7 @@
 }
 
 .mainlogo {
-  width: 80vw;
+  width: 60vw;
 }
 
 .ddmenu {

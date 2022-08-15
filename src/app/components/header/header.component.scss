@@ -1,9 +1,18 @@
-.topnav {
-  background-color: rgb(187, 213, 198, 0.5);
+.headerpic {
+  height: 8vw;
+  background-image: linear-gradient(
+      to bottom,
+      rgb(86, 150, 113, 0.9),
+      rgb(86, 150, 113, 0.8)
+    ),
+    url(../../../assets/homepic.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-.logo {
-  width: 15vw;
+.hd-logo {
+  width: 6vw;
+  display: inline-block;
 }
 
 #navmenu {
@@ -16,6 +25,10 @@
 
 .active-link {
   font-weight: bold;
+}
+
+.mainlogo {
+  width: 60vw;
 }
 
 .ddmenu {

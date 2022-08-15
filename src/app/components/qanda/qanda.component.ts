@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QandaComponent implements OnInit {
   heading = 'Questions and Answers';
+  verse =
+    'In the beginning was the Word, and the Word was with God, and the Word was God.';
 
   constructor() {}
 
