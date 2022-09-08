@@ -22,7 +22,7 @@ $enable-shadows: true;
 
 .dropdown-menu li {
   position: relative;
-  width: 70%;
+  width: 80%;
 }
 
 .dropdown-menu .dropdown-submenu {
@@ -33,10 +33,10 @@ $enable-shadows: true;
   font-size: 0.9rem;
 }
 
-.dropdown-menu .dropdown-submenu-left {
-  right: 100%;
-  left: auto;
-}
+// .dropdown-menu .dropdown-submenu-left {
+//   right: 100%;
+//   left: auto;
+// }
 
 .dropdown-menu > li:hover > .dropdown-submenu {
   display: block;

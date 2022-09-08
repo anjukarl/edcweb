@@ -21,7 +21,7 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item px-2">
               <a
-                routerLink="about"
+                routerLink="/about"
                 class="nav-link text-secondary"
                 routerLinkActive="active-link"
                 >About</a
@@ -58,13 +58,6 @@
                     >Video</a
                   >
                 </li>
-                <!-- <li>
-                  <a
-                    class="dropdown-item text-decoration-none"
-                    routerLink="/wordftd"
-                    >Text</a
-                  >
-                </li> -->
               </ul>
             </li>
 
@@ -78,46 +71,70 @@
               >
               <ul class="dropdown-menu dropdown-menu-dark bg-primary ddmenu">
                 <li>
-                  <a class="dropdown-item text-decoration-none" href="#"
+                  <a
+                    class="dropdown-item text-decoration-none"
+                    data-bs-toggle="dropdown"
+                    routerLinkActive="active-link"
+                    type="button"
                     >Audio &raquo;</a
                   >
-                  <ul
-                    class="dropdown-menu dropdown-menu-dark bg-primary dropdown-submenu"
-                  >
+
+                  <ul class="dropdown-menu bg-primary dropdown-submenu ddmenu">
                     <li>
-                      <a routerLink="/audios" class="dropdown-item"
+                      <a
+                        routerLink="/wtbaudio"
+                        class="dropdown-item text-decoration-none"
                         >With the Bible</a
                       >
                     </li>
                     <li>
-                      <a routerLink="/wordftd" class="dropdown-item"
+                      <a
+                        routerLink="/wordftd"
+                        class="dropdown-item text-decoration-none"
                         >Daily Word</a
                       >
                     </li>
                     <li>
-                      <a routerLink="/qanda" class="dropdown-item">Q and A</a>
+                      <a
+                        routerLink="/qanda"
+                        class="dropdown-item text-decoration-none"
+                        >Q and A</a
+                      >
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a class="dropdown-item text-decoration-none" href="#"
+                  <a
+                    class="dropdown-item text-decoration-none"
+                    data-bs-toggle="dropdown"
+                    routerLinkActive="active-link"
+                    type="button"
                     >Video &raquo;</a
                   >
+
                   <ul
                     class="dropdown-menu dropdown-menu-dark bg-primary dropdown-submenu"
                   >
                     <li>
-                      <a routerLink="/gentorev" class="dropdown-item"
+                      <a
+                        routerLink="/wtbvideo"
+                        class="dropdown-item text-decoration-none"
                         >With the Bible</a
                       >
                     </li>
                     <li>
-                      <a routerLink="wordftdv" class="dropdown-item"
+                      <a
+                        routerLink="/wordftdv"
+                        class="dropdown-item text-decoration-none"
                         >Daily Word</a
                       >
                     </li>
                     <li>
-                      <a routerLink="/videos" class="dropdown-item">Sermons</a>
+                      <a
+                        routerLink="/videos"
+                        class="dropdown-item text-decoration-none"
+                        >Sermons</a
+                      >
                     </li>
                   </ul>
                 </li>
@@ -170,7 +187,6 @@
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col">
       <div class="card shadow custcard h-100">
-        <!-- <img src="..." class="card-img-top" alt="..." /> -->
         <div class="card-body">
           <h5 class="card-title">Genesis to Revelation</h5>
           <p class="card-text">
@@ -189,7 +205,6 @@
     </div>
     <div class="col">
       <div class="card shadow custcard h-100">
-        <!-- <img src="..." class="card-img-top" alt="..." /> -->
         <div class="card-body">
           <h5 class="card-title">Word for the day</h5>
           <p class="card-text">
@@ -206,7 +221,6 @@
     </div>
     <div class="col">
       <div class="card shadow custcard h-100">
-        <!-- <img src="..." class="card-img-top" alt="..." /> -->
         <div class="card-body">
           <h5 class="card-title">Resources - Books/Songs</h5>
           <p class="card-text">
@@ -224,7 +238,6 @@
     </div>
     <div class="col">
       <div class="card shadow custcard h-100">
-        <!-- <img src="..." class="card-img-top" alt="..." /> -->
         <div class="card-body">
           <h5 class="card-title">Sermon Videos</h5>
           <p class="card-text">
