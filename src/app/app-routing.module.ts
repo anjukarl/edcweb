@@ -5,11 +5,9 @@ import { WordftdComponent } from './components/wordftd/wordftd.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ResourcesComponent } from './components/resources/resources.component';
-import { GentorevComponent } from './components/gentorev/gentorev.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { WordftdvComponent } from './components/wordftdv/wordftdv.component';
-import { AudiosComponent } from './components/audios/audios.component';
 import { BooksComponent } from './components/books/books.component';
 import { QandaComponent } from './components/qanda/qanda.component';
 
@@ -23,20 +21,12 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'gentorev',
-    component: GentorevComponent,
-  },
-  {
     path: 'wordftdv',
     component: WordftdvComponent,
   },
   {
     path: 'wordftd',
     component: WordftdComponent,
-  },
-  {
-    path: 'audios',
-    component: AudiosComponent,
   },
   {
     path: 'videos',
