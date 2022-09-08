@@ -10,6 +10,10 @@ import { HomeComponent } from './components/home/home.component';
 import { WordftdvComponent } from './components/wordftdv/wordftdv.component';
 import { BooksComponent } from './components/books/books.component';
 import { QandaComponent } from './components/qanda/qanda.component';
+import { WtbvideoComponent } from './components/wtbvideo/wtbvideo.component';
+import { QandataComponent } from './components/qandata/qandata.component';
+import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
+import { WordftdtaComponent } from './components/wordftdta/wordftdta.component';
 
 const routes: Routes = [
   {
@@ -21,24 +25,40 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'wordftdv',
-    component: WordftdvComponent,
+    path: 'videos',
+    component: VideosComponent,
   },
   {
     path: 'wordftd',
     component: WordftdComponent,
   },
   {
-    path: 'videos',
-    component: VideosComponent,
+    path: 'wordftdta/:id',
+    component: WordftdtaComponent,
   },
   {
-    path: 'books',
-    component: BooksComponent,
+    path: 'wordftdv',
+    component: WordftdvComponent,
+  },
+  {
+    path: 'wtbaudio',
+    component: WtbaudioComponent,
   },
   {
     path: 'qanda',
     component: QandaComponent,
+  },
+  {
+    path: 'qandata/:id',
+    component: QandataComponent,
+  },
+  {
+    path: 'wtbvideo',
+    component: WtbvideoComponent,
+  },
+  {
+    path: 'books',
+    component: BooksComponent,
   },
   {
     path: 'resources',

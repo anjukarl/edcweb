@@ -20,6 +20,10 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { WordftdvComponent } from './components/wordftdv/wordftdv.component';
 import { BooksComponent } from './components/books/books.component';
 import { QandaComponent } from './components/qanda/qanda.component';
+import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
+import { WtbvideoComponent } from './components/wtbvideo/wtbvideo.component';
+import { WordftdtaComponent } from './components/wordftdta/wordftdta.component';
+import { QandataComponent } from './components/qandata/qandata.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { QandaComponent } from './components/qanda/qanda.component';
     WordftdvComponent,
     BooksComponent,
     QandaComponent,
+    WtbaudioComponent,
+    WtbvideoComponent,
+    WordftdtaComponent,
+    QandataComponent,
   ],
   imports: [
     BrowserModule,
