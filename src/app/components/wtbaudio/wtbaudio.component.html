@@ -41,10 +41,7 @@
             formControlName="track"
             (selectionChange)="onSelectTrack()"
           >
-            <mat-option
-              *ngFor="let track of tracks$ | async"
-              [value]="track.name"
-            >
+            <mat-option *ngFor="let track of tracks" [value]="track.name">
               {{ track.name }}
             </mat-option>
           </mat-select>
@@ -57,9 +54,17 @@
         type="button"
         [disabled]="!form.valid || !currentTrack"
         class="btn btn-primary px-5"
+        (click)="playTrack()"
       >
         PLAY
       </button>
     </mat-card-actions>
   </mat-card>
+</div>
+
+<div
+  *ngIf="activeTrack"
+  class="container d-flex justify-content-center px-5 mb-5"
+>
+  <audio controls autoplay [src]="playingTrack.path"></audio>
 </div>

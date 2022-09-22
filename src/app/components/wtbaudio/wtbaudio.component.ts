@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, take } from 'rxjs';
 
 import { FileService } from '../../services/file.service';
 import { Book, Track } from '../../shared/models';
@@ -15,7 +15,7 @@ export class WtbaudioComponent implements OnInit {
   verse =
     'In the beginning was the Word, and the Word was with God, and the Word was God.';
   books$!: Observable<Book[]>;
-  tracks$!: Observable<Track[]>;
+  tracks: Track[] = [];
   bibook = 'Genesis';
   cat = 'old';
   testaments = [
@@ -23,6 +23,9 @@ export class WtbaudioComponent implements OnInit {
     { cat: 'new', name: 'New Testament' },
   ];
   currentTrack = false;
+  activeTrack = false;
+  playingTrack!: Track;
+
   testaSubscription: Subscription = new Subscription();
   bookSubscription: Subscription = new Subscription();
 
@@ -45,9 +48,18 @@ export class WtbaudioComponent implements OnInit {
 
   ngOnInit(): void {
     this.books$ = this.fileService.loadBooks(this.cat);
-    this.tracks$ = this.fileService.loadTracks(this.bibook);
+    this.getTracks();
     this.onChangeTestament();
     this.onChangeBook();
+  }
+
+  getTracks() {
+    this.fileService
+      .loadTracks(this.bibook)
+      .pipe(take(1))
+      .subscribe((res) => {
+        this.tracks = res;
+      });
   }
 
   onChangeTestament(): void {
@@ -65,13 +77,19 @@ export class WtbaudioComponent implements OnInit {
       .get('book')!
       .valueChanges.subscribe((book) => {
         this.bibook = book;
-        this.tracks$ = this.fileService.loadTracks(this.bibook);
+        this.getTracks();
         this.currentTrack = false;
       });
   }
 
   onSelectTrack() {
     this.currentTrack = true;
+  }
+
+  playTrack() {
+    this.activeTrack = true;
+    const trackName = this.form.controls['track'].value;
+    this.playingTrack = this.tracks.find(({ name }) => name === trackName)!;
   }
 
   ngOnDestroy() {
