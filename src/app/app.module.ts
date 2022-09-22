@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -24,6 +25,8 @@ import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
 import { WtbvideoComponent } from './components/wtbvideo/wtbvideo.component';
 import { WordftdtaComponent } from './components/wordftdta/wordftdta.component';
 import { QandataComponent } from './components/qandata/qandata.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { QandataComponent } from './components/qandata/qandata.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFirestoreModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

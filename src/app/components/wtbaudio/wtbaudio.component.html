@@ -1,3 +1,65 @@
 <app-header></app-header>
 <app-subhead [title]="verse" [heading]="heading"></app-subhead>
-<div class="banner p-3">Content awaited...</div>
+
+<div class="container text-center w-50 mb-4">
+  <mat-card>
+    <mat-card-subtitle class="mb-3"
+      >Select Testament, Book & Chapter
+    </mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <!-- <mat-radio-group formControlName="testament">
+          <mat-radio-button value="old" class="pe-4"
+            >Old Testament</mat-radio-button
+          >
+          <mat-radio-button value="new">New Testament</mat-radio-button>
+        </mat-radio-group> -->
+
+        <mat-form-field appearance="fill" class="formgroup mx-5 mt-3">
+          <mat-label>Testament</mat-label>
+          <mat-select formControlName="testament">
+            <mat-option *ngFor="let testa of testaments" [value]="testa.cat">
+              {{ testa.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="testa.invalid">Testament is mandatory!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="formgroup mx-5">
+          <mat-label>Book</mat-label>
+          <mat-select formControlName="book">
+            <mat-option *ngFor="let book of books$ | async" [value]="book.book">
+              {{ book.book }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="book.invalid">Book is mandatory!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="formgroup mx-5">
+          <mat-label>Chapter</mat-label>
+          <mat-select
+            formControlName="track"
+            (selectionChange)="onSelectTrack()"
+          >
+            <mat-option
+              *ngFor="let track of tracks$ | async"
+              [value]="track.name"
+            >
+              {{ track.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="track.invalid">Track is mandatory!</mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        type="button"
+        [disabled]="!form.valid || !currentTrack"
+        class="btn btn-primary px-5"
+      >
+        PLAY
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

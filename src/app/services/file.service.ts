@@ -12,9 +12,11 @@ import { Track, Book } from '../shared/models';
 export class FileService {
   constructor(private db: AngularFirestore) {}
 
-  loadBooks(): Observable<Book[]> {
+  loadBooks(cat: string): Observable<Book[]> {
     return this.db
-      .collection('books', (ref) => ref.orderBy('order'))
+      .collection('books', (ref) =>
+        ref.where('cat', '==', cat).orderBy('order')
+      )
       .get()
       .pipe(map((results) => this.convertSnaps<Book>(results)));
   }

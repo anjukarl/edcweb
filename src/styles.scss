@@ -4,9 +4,7 @@ $secondary: #fada5f; // rgb(250, 218, 95)
 $primary-light: #bbd5c6; // rgb(187, 213, 198)
 $secondary-light: #fdedaf; // rgb(253, 237, 175)
 
-// $main-bg: #eeeeee; // rgb(238, 238, 238)
-
-$font-family-sans-serif: "Open Sans", Roboto, system-ui, -apple-system,
+$font-family-sans-serif: "Open Sans", sans-serif, system-ui, -apple-system,
   "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
   "Noto Color Emoji";
@@ -15,6 +13,17 @@ $enable-gradients: true;
 $enable-shadows: true;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/@angular/material/theming";
+@import "./custom-color.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
 
 .banner {
   height: 55vh;
@@ -32,11 +41,6 @@ $enable-shadows: true;
   top: -7px;
   font-size: 0.9rem;
 }
-
-// .dropdown-menu .dropdown-submenu-left {
-//   right: 100%;
-//   left: auto;
-// }
 
 .dropdown-menu > li:hover > .dropdown-submenu {
   display: block;
