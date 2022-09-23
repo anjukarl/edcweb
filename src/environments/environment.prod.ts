@@ -5,8 +5,8 @@ export const environment = {
     projectId: 'withthebible-c93d6',
     storageBucket: 'withthebible-c93d6.appspot.com',
     messagingSenderId: '557096516299',
-    appId: '1:557096516299:web:a407d6715b4c0fec05f94e',
-    measurementId: 'G-7MN5CNC44C',
+    appId: '1:557096516299:web:6dda9d97fa91748305f94e',
+    measurementId: 'G-6RSS3RLXCL',
   },
   production: true,
 };

@@ -1,14 +1,15 @@
 {
+  "projects": {
+    "default": "withthebible-c93d6"
+  },
   "targets": {
-    "audiotest-57c98": {
+    "withthebible-c93d6": {
       "hosting": {
         "edcweb": [
-          "audiotest-57c98"
+          "edcwebsite"
         ]
       }
     }
   },
-  "projects": {
-    "default": "audiotest-57c98"
-  }
+  "etags": {}
 }
