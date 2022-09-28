@@ -14,3 +14,12 @@ export interface Book {
   bkan: string;
   cat: string;
 }
+
+export interface Videos {
+  date?: string;
+  playlist?: string;
+  thumbnail: string;
+  title: string;
+  type?: string;
+  videoId: string;
+}
