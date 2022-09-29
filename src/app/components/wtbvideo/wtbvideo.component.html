@@ -40,8 +40,8 @@
 
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let row">
-          <button mat-icon-button (click)="playVideo(row)">
+        <td mat-cell *matCellDef="let video">
+          <button mat-icon-button (click)="playVideo(video)">
             <mat-icon>ondemand_video</mat-icon>
           </button>
         </td>

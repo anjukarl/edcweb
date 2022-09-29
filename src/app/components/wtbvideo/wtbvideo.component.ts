@@ -2,10 +2,17 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import {
+  MatDialog,
+  MatDialogConfig,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { finalize } from 'rxjs';
 
 import { Videos } from '../../shared/models';
 import { FileService } from '../../services/file.service';
+import { VideoDialogComponent } from '../../shared/video-dialog/video-dialog.component';
 
 @Component({
   selector: 'app-wtbvideo',
@@ -20,11 +27,12 @@ export class WtbvideoComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   loading = false;
   searchKey: string = '';
+  video!: Videos;
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private fileService: FileService) {}
+  constructor(private fileService: FileService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.reloadVideos();
@@ -51,5 +59,17 @@ export class WtbvideoComponent implements OnInit {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
-  playVideo(vid: Videos) {}
+  playVideo(vid: Videos) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.minWidth = '640px';
+    dialogConfig.data = vid;
+
+    this.dialog
+      .open(VideoDialogComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(() => {
+        this.onSearchClear();
+      });
+  }
 }

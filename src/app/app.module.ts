@@ -7,6 +7,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
+// import { YouTubePlayerModule } from '@angular/youtube-player';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,6 +28,7 @@ import { WordftdtaComponent } from './components/wordftdta/wordftdta.component';
 import { QandataComponent } from './components/qandata/qandata.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { VideoDialogComponent } from './shared/video-dialog/video-dialog.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { MaterialModule } from './material/material.module';
     WtbvideoComponent,
     WordftdtaComponent,
     QandataComponent,
+    VideoDialogComponent,
   ],
   imports: [
     BrowserModule,
