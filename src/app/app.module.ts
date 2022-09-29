@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 // import { YouTubePlayerModule } from '@angular/youtube-player';
 
-import { AppComponent } from './app.component';
+import { AppComponent, SafePipe } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
@@ -50,6 +50,7 @@ import { VideoDialogComponent } from './shared/video-dialog/video-dialog.compone
     WordftdtaComponent,
     QandataComponent,
     VideoDialogComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
