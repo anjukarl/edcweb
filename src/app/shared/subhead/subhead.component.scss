@@ -5,16 +5,23 @@
       rgb(242, 242, 242, 0.8)
     ),
     url(../../../assets/homepic.jpg);
-  padding: 8rem 10rem;
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 5rem;
   align-items: center;
-  height: 50vh;
+  height: 20vw;
 }
 
-.title {
+.heading {
   text-align: center;
   text-transform: uppercase;
   padding: 2rem;
   font-size: 1.5rem;
   font-weight: 500;
   margin: auto;
+  max-height: 40vh;
+}
+
+h2 {
+  font-size: clamp(1rem, 2vw, 10vw);
 }

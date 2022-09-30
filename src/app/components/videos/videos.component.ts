@@ -57,7 +57,7 @@ export class VideosComponent implements OnInit {
   playVideo(vid: Videos) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.minWidth = '640px';
+    dialogConfig.minWidth = '600px';
     dialogConfig.data = vid;
 
     this.dialog
