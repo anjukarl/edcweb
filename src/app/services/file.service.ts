@@ -4,7 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { Track, Book, Videos } from '../shared/models';
+import { Track, Book, Videos, Bibverses } from '../shared/models';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +28,13 @@ export class FileService {
       )
       .get()
       .pipe(map((results) => this.convertSnaps<Track>(results)));
+  }
+
+  loadVerses(): Observable<Bibverses[]> {
+    return this.db
+      .collection('verses')
+      .get()
+      .pipe(map((results) => this.convertSnaps<Bibverses>(results)));
   }
 
   loadVideos(): Observable<Videos[]> {

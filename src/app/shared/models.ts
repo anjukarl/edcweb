@@ -1,10 +1,7 @@
-export interface Track {
+export interface Bibverses {
   id?: string;
-  book: string;
-  name: string;
-  namk: string;
-  path: string;
-  duration: number;
+  reference: string;
+  text: string;
 }
 
 export interface Book {
@@ -13,6 +10,15 @@ export interface Book {
   book: string;
   bkan: string;
   cat: string;
+}
+
+export interface Track {
+  id?: string;
+  book: string;
+  name: string;
+  namk: string;
+  path: string;
+  duration: number;
 }
 
 export interface Videos {
