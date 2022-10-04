@@ -11,12 +11,13 @@
 }
 
 .hd-logo {
-  width: 6vw;
+  width: clamp(4vw, 6vw, 8vw);
   display: inline-block;
 }
 
 #navmenu {
   font-size: 0.9rem;
+  background-color: rgb(86, 150, 113);
 
   a:hover {
     text-decoration: underline;
@@ -34,4 +35,9 @@
 .ddmenu {
   font-size: 0.9rem;
   text-decoration: none;
+}
+
+.navbar-toggler {
+  font-size: 3vw;
+  background-color: rgb(86, 150, 113);
 }

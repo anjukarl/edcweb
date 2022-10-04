@@ -7,7 +7,6 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
-// import { YouTubePlayerModule } from '@angular/youtube-player';
 
 import { AppComponent, SafePipe } from './app.component';
 import { HeaderComponent } from './components/header/header.component';

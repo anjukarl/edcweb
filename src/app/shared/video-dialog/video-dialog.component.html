@@ -1,4 +1,7 @@
-<iframe width="600" height="400" [src]="vidUrl | safe"> </iframe>
+<div mat-dialog-content>
+  <iframe class="ifram" [src]="vidUrl | safe"> </iframe>
+</div>
+
 <div mat-dialog-actions>
   <button mat-button class="video-button" (click)="onNoClick()">Close</button>
 </div>

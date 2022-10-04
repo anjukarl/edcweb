@@ -57,8 +57,8 @@ export class WtbvideoComponent implements OnInit {
   playVideo(vid: Videos) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.minWidth = '600px';
     dialogConfig.data = vid;
+    dialogConfig.width = '60%';
 
     this.dialog
       .open(VideoDialogComponent, dialogConfig)

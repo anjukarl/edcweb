@@ -9,23 +9,23 @@
   background-position: center;
   padding: 6vw 5vw;
   align-items: center;
-  height: 20vw;
+  height: 25vw;
 }
 
 .heading {
   text-align: center;
   text-transform: uppercase;
-  padding: 2rem;
+  padding: 2rem 2rem 0 2rem;
   font-size: 1.8vw;
   font-weight: 500;
   margin: auto;
-  max-height: 40vh;
+  max-height: 10vh;
 }
 
 .ref-animated {
   // font-size: clamp(0.6rem, 0.5vw, 10vw);
   font-size: 1vw;
-  animation: moveInBottom 3s ease-out;
+  animation: moveInBottom 2s ease-out;
   animation-fill-mode: backwards;
 }
 
@@ -34,7 +34,7 @@
   font-size: 2vw;
   // font-size: clamp(1rem, 1vw, 10vw);
   font-weight: 400;
-  animation: moveInLeft 3s ease-out;
+  animation: moveInLeft 2s ease-out;
 }
 
 @keyframes moveInLeft {
