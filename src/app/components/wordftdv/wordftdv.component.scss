@@ -1,3 +1,14 @@
-table > td > img {
-  height: 50px;
+img,
+td {
+  height: clamp(1.5rem, 5vw, 3rem);
+}
+
+.mat-column-title,
+.mat-column-thumbnail,
+.mat-column-actions {
+  font-size: clamp(0.5rem, 1vw, 2rem);
+}
+
+.search-form-field {
+  font-size: clamp(0.5rem, 1.1vw, 2rem);
 }

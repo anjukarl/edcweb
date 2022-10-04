@@ -7,7 +7,7 @@
     url(../../../assets/homepic.jpg);
   background-size: cover;
   background-position: center;
-  padding: 6rem 5rem;
+  padding: 6vw 5vw;
   align-items: center;
   height: 20vw;
 }
@@ -16,24 +16,23 @@
   text-align: center;
   text-transform: uppercase;
   padding: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.8vw;
   font-weight: 500;
   margin: auto;
   max-height: 40vh;
 }
 
-h2 {
-  font-size: clamp(1rem, 2vw, 10vw);
-}
-
 .ref-animated {
+  // font-size: clamp(0.6rem, 0.5vw, 10vw);
+  font-size: 1vw;
   animation: moveInBottom 3s ease-out;
   animation-fill-mode: backwards;
 }
 
 .verse-animated {
   display: block;
-  font-size: 1.8rem;
+  font-size: 2vw;
+  // font-size: clamp(1rem, 1vw, 10vw);
   font-weight: 400;
   animation: moveInLeft 3s ease-out;
 }
