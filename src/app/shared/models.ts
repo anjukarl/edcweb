@@ -12,6 +12,13 @@ export interface Book {
   cat: string;
 }
 
+export interface Qanda {
+  answer: string;
+  id?: string;
+  question: string;
+  serialno: string;
+}
+
 export interface Track {
   id?: string;
   book: string;

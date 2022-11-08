@@ -1,3 +1,29 @@
-.contact-title {
-  display: inline-block;
+.cont {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95vw;
+}
+
+.cont-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 2rem;
+  // width: 60vw;
+  // height: 40vw;
+}
+
+.card-details {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.map {
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.map-card {
+  background-color: #ddd;
 }

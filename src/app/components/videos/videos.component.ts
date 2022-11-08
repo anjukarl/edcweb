@@ -16,8 +16,7 @@ import { VideoDialogComponent } from '../../shared/video-dialog/video-dialog.com
 })
 export class VideosComponent implements OnInit {
   heading = 'Video Sermons';
-  verse =
-    'In the beginning was the Word, and the Word was with God, and the Word was God.';
+
   columnsToDisplay = ['thumbnail', 'title', 'actions'];
   dataSource!: MatTableDataSource<any>;
   loading = false;

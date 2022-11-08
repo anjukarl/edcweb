@@ -2,6 +2,7 @@
   <div class="container topnav">
     <nav class="topnav navbar navbar-expand-md navbar-dark pt-0 pb-1">
       <div class="container topnav">
+        <!-- header logo -->
         <a routerLink="/" class="navbar-brand">
           <img
             src="../../../assets/econ.png"
@@ -9,6 +10,7 @@
             class="hd-logo mt-2 rounded"
           />
         </a>
+        <!-- toggler menu button for small screens -->
         <button
           class="navbar-toggler"
           type="button"
@@ -17,6 +19,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- main menu -->
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item px-2">
@@ -43,6 +46,7 @@
                 type="button"
                 >Daily Word</a
               >
+              <!-- drop down menu for Daily Word -->
               <ul class="dropdown-menu dropdown-menu-dark bg-primary ddmenu">
                 <li>
                   <a
@@ -69,6 +73,7 @@
                 type="button"
                 >Resources</a
               >
+              <!-- drop down menu for Resources -->
               <ul class="dropdown-menu dropdown-menu-dark bg-primary ddmenu">
                 <li>
                   <a
@@ -78,12 +83,12 @@
                     type="button"
                     >Audio &raquo;</a
                   >
-
+                  <!-- drop down menu for Resources-> Audio -->
                   <ul class="dropdown-menu bg-primary dropdown-submenu ddmenu">
                     <li>
                       <a
-                        routerLink="/wtbaudio"
                         class="dropdown-item text-decoration-none"
+                        routerLink="/wtbaudio"
                         >With the Bible</a
                       >
                     </li>
@@ -111,7 +116,7 @@
                     type="button"
                     >Video &raquo;</a
                   >
-
+                  <!-- drop down menu for Resources-> Video -->
                   <ul
                     class="dropdown-menu dropdown-menu-dark bg-primary dropdown-submenu"
                   >
@@ -138,6 +143,7 @@
                     </li>
                   </ul>
                 </li>
+
                 <li>
                   <a
                     class="dropdown-item text-decoration-none"
