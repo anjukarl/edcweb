@@ -49,10 +49,6 @@ const routes: Routes = [
     component: QandaComponent,
   },
   {
-    path: 'qandata/:id',
-    component: QandataComponent,
-  },
-  {
     path: 'wtbvideo',
     component: WtbvideoComponent,
   },

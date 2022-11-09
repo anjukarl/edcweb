@@ -52,5 +52,17 @@ export class QandaComponent implements OnInit {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
-  viewQanda(qanda: Qanda) {}
+  viewQanda(qanda: Qanda) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = qanda;
+    dialogConfig.width = '60%';
+
+    this.dialog
+      .open(QandataComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(() => {
+        this.onSearchClear();
+      });
+  }
 }
