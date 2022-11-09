@@ -4,7 +4,14 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { Track, Book, Videos, Bibverses, Qanda } from '../shared/models';
+import {
+  Track,
+  Book,
+  Videos,
+  Bibverses,
+  Qanda,
+  DailyWord,
+} from '../shared/models';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +33,13 @@ export class FileService {
       .collection('qanda')
       .get()
       .pipe(map((results) => this.convertSnaps<Qanda>(results)));
+  }
+
+  loadDailyWord(): Observable<DailyWord[]> {
+    return this.db
+      .collection('dailyword')
+      .get()
+      .pipe(map((results) => this.convertSnaps<DailyWord>(results)));
   }
 
   loadTracks(cat: string): Observable<Track[]> {

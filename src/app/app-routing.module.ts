@@ -33,10 +33,6 @@ const routes: Routes = [
     component: WordftdComponent,
   },
   {
-    path: 'wordftdta/:id',
-    component: WordftdtaComponent,
-  },
-  {
     path: 'wordftdv',
     component: WordftdvComponent,
   },

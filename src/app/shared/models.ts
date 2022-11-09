@@ -12,6 +12,12 @@ export interface Book {
   cat: string;
 }
 
+export interface DailyWord {
+  id?: string;
+  text: string;
+  title: string;
+}
+
 export interface Qanda {
   answer: string;
   id?: string;
