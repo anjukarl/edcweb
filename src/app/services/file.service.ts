@@ -7,6 +7,7 @@ import { map, tap } from 'rxjs/operators';
 import {
   Track,
   Book,
+  Bookpdf,
   Videos,
   Bibverses,
   Qanda,
@@ -26,6 +27,13 @@ export class FileService {
       )
       .get()
       .pipe(map((results) => this.convertSnaps<Book>(results)));
+  }
+
+  loadBookpdfs(): Observable<Bookpdf[]> {
+    return this.db
+      .collection('bookpdfs')
+      .get()
+      .pipe(map((results) => this.convertSnaps<Bookpdf>(results)));
   }
 
   loadQandas(): Observable<Qanda[]> {

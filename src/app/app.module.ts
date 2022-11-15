@@ -8,7 +8,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent, SafePipe } from './app.component';
+import { AppComponent, SafePipe, TrustHtmlPipe } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
@@ -50,6 +50,7 @@ import { VideoDialogComponent } from './shared/video-dialog/video-dialog.compone
     QandataComponent,
     VideoDialogComponent,
     SafePipe,
+    TrustHtmlPipe,
   ],
   imports: [
     BrowserModule,
