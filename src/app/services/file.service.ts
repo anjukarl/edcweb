@@ -5,13 +5,14 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 import {
-  Track,
+  Bibverses,
   Book,
   Bookpdf,
-  Videos,
-  Bibverses,
-  Qanda,
   DailyWord,
+  Qanda,
+  Songs,
+  Track,
+  Videos,
 } from '../shared/models';
 
 @Injectable({
@@ -19,6 +20,13 @@ import {
 })
 export class FileService {
   constructor(private db: AngularFirestore) {}
+
+  loadSongs(): Observable<Songs[]> {
+    return this.db
+      .collection('songs')
+      .get()
+      .pipe(map((results) => this.convertSnaps<Songs>(results)));
+  }
 
   loadBooks(cat: string): Observable<Book[]> {
     return this.db

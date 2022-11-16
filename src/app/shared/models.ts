@@ -35,6 +35,12 @@ export interface Qanda {
   serialno: string;
 }
 
+export interface Songs {
+  id?: string;
+  text: string;
+  title: string;
+}
+
 export interface Track {
   id?: string;
   book: string;

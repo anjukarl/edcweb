@@ -1,3 +1,4 @@
+import { SongsComponent } from './components/songs/songs.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,9 +12,7 @@ import { WordftdvComponent } from './components/wordftdv/wordftdv.component';
 import { BooksComponent } from './components/books/books.component';
 import { QandaComponent } from './components/qanda/qanda.component';
 import { WtbvideoComponent } from './components/wtbvideo/wtbvideo.component';
-import { QandataComponent } from './components/qandata/qandata.component';
 import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
-import { WordftdtaComponent } from './components/wordftdta/wordftdta.component';
 
 const routes: Routes = [
   {
@@ -35,6 +34,10 @@ const routes: Routes = [
   {
     path: 'wordftdv',
     component: WordftdvComponent,
+  },
+  {
+    path: 'songs',
+    component: SongsComponent,
   },
   {
     path: 'wtbaudio',

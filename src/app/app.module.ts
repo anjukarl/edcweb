@@ -28,6 +28,8 @@ import { QandataComponent } from './components/qandata/qandata.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { VideoDialogComponent } from './shared/video-dialog/video-dialog.component';
+import { SongsComponent } from './components/songs/songs.component';
+import { SongstaComponent } from './components/songsta/songsta.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { VideoDialogComponent } from './shared/video-dialog/video-dialog.compone
     VideoDialogComponent,
     SafePipe,
     TrustHtmlPipe,
+    SongsComponent,
+    SongstaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<div mat-dialog-content class="qa">
+  <h4 [innerHTML]="data.title | trusthtml"></h4>
+  <hr />
+  <div [innerHTML]="data.text | trusthtml"></div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button class="close-button" (click)="onNoClick()">Close</button>
+</div>
