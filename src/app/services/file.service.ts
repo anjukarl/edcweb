@@ -9,6 +9,7 @@ import {
   Book,
   Bookpdf,
   DailyWord,
+  Message,
   Qanda,
   Songs,
   Track,
@@ -20,6 +21,13 @@ import {
 })
 export class FileService {
   constructor(private db: AngularFirestore) {}
+
+  loadMessages(): Observable<Message[]> {
+    return this.db
+      .collection('messages')
+      .get()
+      .pipe(map((results) => this.convertSnaps<Message>(results)));
+  }
 
   loadSongs(): Observable<Songs[]> {
     return this.db
@@ -46,7 +54,7 @@ export class FileService {
 
   loadQandas(): Observable<Qanda[]> {
     return this.db
-      .collection('qanda')
+      .collection('qanda', (ref) => ref.orderBy('serialno'))
       .get()
       .pipe(map((results) => this.convertSnaps<Qanda>(results)));
   }

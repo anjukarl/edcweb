@@ -1,8 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Videos } from '../models';
-
 @Component({
   selector: 'app-video-dialog',
   templateUrl: './video-dialog.component.html',
@@ -14,11 +12,11 @@ export class VideoDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<VideoDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Videos
+    @Inject(MAT_DIALOG_DATA) public data: string
   ) {}
 
   ngOnInit(): void {
-    this.vidUrl = this.yturl + this.data.videoId;
+    this.vidUrl = this.yturl + this.data;
   }
 
   onNoClick(): void {
