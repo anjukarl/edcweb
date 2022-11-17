@@ -4,12 +4,17 @@
 }
 
 .mat-dialog-content {
-  // width: clamp(50vw, 60vw, 80vw);
   width: 60vw;
   height: 30vw;
 }
 
 .ifram {
   width: 100%;
-  height: 95%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .mat-dialog-content {
+    width: 80vw;
+  }
 }

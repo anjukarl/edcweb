@@ -60,7 +60,6 @@ export class ResourcesComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.data = videoId;
-    dialogConfig.width = '60%';
 
     this.dialog
       .open(VideoDialogComponent, dialogConfig)

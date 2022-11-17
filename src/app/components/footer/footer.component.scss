@@ -3,24 +3,38 @@
   display: inline-block;
 }
 
+.footht {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .copy {
   font-size: 0.7rem;
   margin-bottom: 0;
 }
 
-.soc-blocks {
-  display: inline-block;
-  font-size: 0.8rem;
-  margin-top: 2rem;
-}
-
 .inblock {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   margin-top: 2rem;
 }
 
 .topofpage {
   border-radius: 50%;
   border: none;
+}
+
+@media (max-width: 900px) {
+  .ft-logo {
+    width: 15vw;
+  }
+
+  .footht {
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+
+  .topofpage {
+    margin-bottom: 1rem;
+  }
 }

@@ -5,6 +5,18 @@
 }
 
 .card-width {
-  // width: clamp(80vw, 50%, 80vw);
-  width: 80vw;
+  width: 60vw;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .card-width {
+    width: 92vw;
+  }
+
+  .formgroup {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }

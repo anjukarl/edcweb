@@ -11,7 +11,8 @@
 }
 
 .hd-logo {
-  width: clamp(4vw, 6vw, 8vw);
+  // width: clamp(4vw, 6vw, 8vw);
+  width: 5rem;
   display: inline-block;
 }
 
@@ -37,4 +38,10 @@
 .navbar-toggler {
   font-size: 3vw;
   background-color: rgb(86, 150, 113);
+}
+
+@media (max-width: 900px) {
+  .hd-logo {
+    width: 1.8rem;
+  }
 }

@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-subhead [title]="verse" [heading]="heading"></app-subhead>
 
-<div class="container text-center card-width mb-4">
+<div class="container text-center card-width">
   <mat-card>
     <mat-card-subtitle class="mb-3"
       >Select Testament, Book & Chapter
@@ -38,7 +38,7 @@
               {{ track.name }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="track.invalid">Track is mandatory!</mat-error>
+          <mat-error *ngIf="track.invalid">Chapter is mandatory!</mat-error>
         </mat-form-field>
       </form>
     </mat-card-content>

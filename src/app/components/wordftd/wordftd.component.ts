@@ -56,7 +56,6 @@ export class WordftdComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.data = dword;
-    dialogConfig.width = '60%';
 
     this.dialog
       .open(WordftdtaComponent, dialogConfig)

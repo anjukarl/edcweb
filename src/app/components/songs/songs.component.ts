@@ -56,7 +56,6 @@ export class SongsComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.data = songs;
-    dialogConfig.width = '60%';
 
     this.dialog
       .open(SongstaComponent, dialogConfig)

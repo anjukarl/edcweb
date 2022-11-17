@@ -56,7 +56,6 @@ export class QandaComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.data = qanda;
-    dialogConfig.width = '60%';
 
     this.dialog
       .open(QandataComponent, dialogConfig)

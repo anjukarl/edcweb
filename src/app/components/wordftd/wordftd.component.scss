@@ -7,3 +7,9 @@
   margin: auto;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 900px) {
+  .table {
+    width: 92vw;
+  }
+}

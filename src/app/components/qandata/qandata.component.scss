@@ -1,6 +1,6 @@
 .mat-dialog-content {
   width: 60vw;
-  height: 20vw;
+  height: 40vh;
 }
 
 .close-button {
@@ -10,4 +10,16 @@
 
 .qa {
   padding: 2em;
+}
+
+@media (max-width: 900px) {
+  .mat-dialog-content {
+    width: 90vw;
+    height: 50vh;
+  }
+
+  .qa {
+    padding-right: 12vw;
+    padding-left: 5vw;
+  }
 }
