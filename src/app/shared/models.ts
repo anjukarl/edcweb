@@ -26,6 +26,7 @@ export interface DailyWord {
   id?: string;
   text: string;
   title: string;
+  serialno: number;
 }
 
 export interface Message {

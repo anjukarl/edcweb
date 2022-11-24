@@ -1,15 +1,17 @@
-.mat-dialog-content {
-  width: 60vw;
-  height: 40vh;
-}
-
 .close-button {
   background-color: rgb(86, 150, 113, 0.9);
   color: #fff;
 }
 
 .qa {
-  padding: 2em;
+  padding-left: 2em;
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.qt {
+  padding-left: 1.8em;
 }
 
 @media (max-width: 900px) {

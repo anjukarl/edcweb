@@ -17,7 +17,7 @@ import { WordftdtaComponent } from '../../components/wordftdta/wordftdta.compone
 export class WordftdComponent implements OnInit {
   heading = 'Daily Word - Audio & Text';
 
-  columnsToDisplay = ['title', 'actions'];
+  columnsToDisplay = ['serialno', 'title', 'actions'];
   dataSource!: MatTableDataSource<any>;
   loading = false;
   searchKey: string = '';

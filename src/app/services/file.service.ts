@@ -61,7 +61,7 @@ export class FileService {
 
   loadDailyWord(): Observable<DailyWord[]> {
     return this.db
-      .collection('dailyword')
+      .collection('dailyword', (ref) => ref.orderBy('serialno', 'desc'))
       .get()
       .pipe(map((results) => this.convertSnaps<DailyWord>(results)));
   }
