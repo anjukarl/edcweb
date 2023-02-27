@@ -13,6 +13,7 @@ import { BooksComponent } from './components/books/books.component';
 import { QandaComponent } from './components/qanda/qanda.component';
 import { WtbvideoComponent } from './components/wtbvideo/wtbvideo.component';
 import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
+import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'wordftd',
     component: WordftdComponent,
+  },
+  {
+    path: 'wordftd/:serialno',
+    component: WordftdDetailComponent,
   },
   {
     path: 'wordftdv',

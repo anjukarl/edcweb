@@ -20,13 +20,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
 
 const matmodules = [
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  MatDialogModule,
   MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
   MatGridListModule,
   MatIconModule,
   MatInputModule,

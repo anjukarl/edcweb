@@ -3,11 +3,12 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 
 import { DailyWord } from '../../shared/models';
 import { FileService } from '../../services/file.service';
-import { WordftdtaComponent } from '../../components/wordftdta/wordftdta.component';
+// import { WordftdtaComponent } from '../../components/wordftdta/wordftdta.component';
 
 @Component({
   selector: 'app-wordftd',
@@ -25,7 +26,11 @@ export class WordftdComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private fileService: FileService, private dialog: MatDialog) {}
+  constructor(
+    private fileService: FileService,
+    private dialog: MatDialog,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.reloadDailyWord();
@@ -52,16 +57,20 @@ export class WordftdComponent implements OnInit {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
-  viewDailyWord(dword: DailyWord) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.data = dword;
+  // viewDailyWord(dword: DailyWord) {
+  //   const dialogConfig = new MatDialogConfig();
+  //   dialogConfig.autoFocus = true;
+  //   dialogConfig.data = dword;
 
-    this.dialog
-      .open(WordftdtaComponent, dialogConfig)
-      .afterClosed()
-      .subscribe(() => {
-        this.onSearchClear();
-      });
+  //   this.dialog
+  //     .open(WordftdtaComponent, dialogConfig)
+  //     .afterClosed()
+  //     .subscribe(() => {
+  //       this.onSearchClear();
+  //     });
+  // }
+
+  viewDailyWord(dword: DailyWord) {
+    this.router.navigate(['/wordftd', dword.serialno]);
   }
 }

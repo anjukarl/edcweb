@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 
 import {
   Bibverses,
@@ -42,7 +42,10 @@ export class FileService {
         ref.where('cat', '==', cat).orderBy('order')
       )
       .get()
-      .pipe(map((results) => this.convertSnaps<Book>(results)));
+      .pipe(
+        map((results) => this.convertSnaps<Book>(results)),
+        shareReplay()
+      );
   }
 
   loadBookpdfs(): Observable<Bookpdf[]> {
@@ -56,14 +59,24 @@ export class FileService {
     return this.db
       .collection('qanda', (ref) => ref.orderBy('serialno'))
       .get()
-      .pipe(map((results) => this.convertSnaps<Qanda>(results)));
+      .pipe(
+        map((results) => this.convertSnaps<Qanda>(results)),
+        shareReplay()
+      );
   }
 
   loadDailyWord(): Observable<DailyWord[]> {
     return this.db
       .collection('dailyword', (ref) => ref.orderBy('serialno', 'desc'))
       .get()
-      .pipe(map((results) => this.convertSnaps<DailyWord>(results)));
+      .pipe(
+        map((results) => this.convertSnaps<DailyWord>(results)),
+        shareReplay()
+      );
+  }
+
+  loadDWDetail(id: string) {
+    return this.db.doc<DailyWord>(`dailyword/${id}`).valueChanges();
   }
 
   loadTracks(cat: string): Observable<Track[]> {
@@ -72,14 +85,20 @@ export class FileService {
         ref.where('book', '==', cat).orderBy('name')
       )
       .get()
-      .pipe(map((results) => this.convertSnaps<Track>(results)));
+      .pipe(
+        map((results) => this.convertSnaps<Track>(results)),
+        shareReplay()
+      );
   }
 
   loadVerses(): Observable<Bibverses[]> {
     return this.db
       .collection('verses')
       .get()
-      .pipe(map((results) => this.convertSnaps<Bibverses>(results)));
+      .pipe(
+        map((results) => this.convertSnaps<Bibverses>(results)),
+        shareReplay()
+      );
   }
 
   loadVideos(): Observable<Videos[]> {

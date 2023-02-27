@@ -30,6 +30,7 @@ import { MaterialModule } from './material/material.module';
 import { VideoDialogComponent } from './shared/video-dialog/video-dialog.component';
 import { SongsComponent } from './components/songs/songs.component';
 import { SongstaComponent } from './components/songsta/songsta.component';
+import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { SongstaComponent } from './components/songsta/songsta.component';
     TrustHtmlPipe,
     SongsComponent,
     SongstaComponent,
+    WordftdDetailComponent,
   ],
   imports: [
     BrowserModule,
