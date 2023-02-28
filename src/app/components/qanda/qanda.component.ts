@@ -2,12 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { finalize } from 'rxjs';
 
 import { Qanda } from '../../shared/models';
 import { FileService } from '../../services/file.service';
-import { QandataComponent } from '../../components/qandata/qandata.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-qanda',
@@ -25,7 +24,7 @@ export class QandaComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private fileService: FileService, private dialog: MatDialog) {}
+  constructor(private fileService: FileService, private router: Router) {}
 
   ngOnInit(): void {
     this.reloadQandas();
@@ -53,15 +52,6 @@ export class QandaComponent implements OnInit {
   }
 
   viewQanda(qanda: Qanda) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.data = qanda;
-
-    this.dialog
-      .open(QandataComponent, dialogConfig)
-      .afterClosed()
-      .subscribe(() => {
-        this.onSearchClear();
-      });
+    this.router.navigate(['/qanda', qanda.serialno]);
   }
 }

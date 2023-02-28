@@ -31,6 +31,8 @@ import { VideoDialogComponent } from './shared/video-dialog/video-dialog.compone
 import { SongsComponent } from './components/songs/songs.component';
 import { SongstaComponent } from './components/songsta/songsta.component';
 import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
+import { QandaDetailComponent } from './components/qanda-detail/qanda-detail.component';
+import { SongsDetailComponent } from './components/songs-detail/songs-detail.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-deta
     SongsComponent,
     SongstaComponent,
     WordftdDetailComponent,
+    QandaDetailComponent,
+    SongsDetailComponent,
   ],
   imports: [
     BrowserModule,

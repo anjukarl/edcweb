@@ -3,20 +3,20 @@ import { ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs';
 
 import { FileService } from './../../services/file.service';
-import { DailyWord } from './../../shared/models';
+import { Qanda } from './../../shared/models';
 
 @Component({
-  selector: 'app-wordftd-detail',
-  templateUrl: './wordftd-detail.component.html',
-  styleUrls: ['./wordftd-detail.component.scss'],
+  selector: 'app-qanda-detail',
+  templateUrl: './qanda-detail.component.html',
+  styleUrls: ['./qanda-detail.component.scss'],
 })
-export class WordftdDetailComponent implements OnInit {
-  heading = 'Daily Word - Audio & Text';
+export class QandaDetailComponent implements OnInit {
+  heading = 'Questions & Answers';
   sno = '';
-  dailyWords: DailyWord[] = [];
-  wordftd: DailyWord = {
-    text: '',
-    title: '',
+  qandas: Qanda[] = [];
+  qanda: Qanda = {
+    answer: '',
+    question: '',
     serialno: 0,
   };
   loading = false;
@@ -32,21 +32,21 @@ export class WordftdDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.sno = this.actRoute.snapshot.paramMap.get('serialno')!;
-    this.reloadDailyWord();
+    this.reloadQandas();
   }
 
-  reloadDailyWord() {
+  reloadQandas() {
     this.loading = true;
     this.fileService
-      .loadDailyWord()
+      .loadQandas()
       .pipe(finalize(() => (this.loading = false)))
-      .subscribe((dailywordList) => {
-        this.dailyWords = dailywordList;
-        this.wordftd = this.dailyWords.find((word) => {
+      .subscribe((qandaList) => {
+        this.qandas = qandaList;
+        this.qanda = this.qandas.find((word) => {
           return word.serialno === parseInt(this.sno);
         });
-        this.heading = `${this.wordftd.serialno} - ${this.wordftd.title}`;
-        if (parseInt(this.sno) == this.dailyWords.length) {
+        this.heading = `${this.qanda.serialno} - ${this.qanda.question}`;
+        if (parseInt(this.sno) == this.qandas.length) {
           this.nextAvailable = false;
         }
         if (parseInt(this.sno) == 1) {
@@ -60,28 +60,28 @@ export class WordftdDetailComponent implements OnInit {
     if (newno == 1) {
       this.prevAvailable = false;
     }
-    if (newno < this.dailyWords.length) {
+    if (newno < this.qandas.length) {
       this.nextAvailable = true;
     }
     this.sno = newno.toString();
-    this.wordftd = this.dailyWords.find((word) => {
+    this.qanda = this.qandas.find((word) => {
       return word.serialno === parseInt(this.sno);
     });
-    this.heading = `${this.wordftd.serialno} - ${this.wordftd.title}`;
+    this.heading = `${this.qanda.serialno} - ${this.qanda.question}`;
   }
 
   goNext() {
     let newno = parseInt(this.sno) + 1;
-    if (newno == this.dailyWords.length) {
+    if (newno == this.qandas.length) {
       this.nextAvailable = false;
     }
     if (newno > 1) {
       this.prevAvailable = true;
     }
     this.sno = newno.toString();
-    this.wordftd = this.dailyWords.find((word) => {
+    this.qanda = this.qandas.find((word) => {
       return word.serialno === parseInt(this.sno);
     });
-    this.heading = `${this.wordftd.serialno} - ${this.wordftd.title}`;
+    this.heading = `${this.qanda.serialno} - ${this.qanda.question}`;
   }
 }

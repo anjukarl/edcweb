@@ -2,12 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 
 import { Songs } from '../../shared/models';
 import { FileService } from '../../services/file.service';
-import { SongstaComponent } from '../../components/songsta/songsta.component';
 
 @Component({
   selector: 'app-songs',
@@ -17,7 +16,7 @@ import { SongstaComponent } from '../../components/songsta/songsta.component';
 export class SongsComponent implements OnInit {
   heading = 'Songs - Text';
 
-  columnsToDisplay = ['title', 'actions'];
+  columnsToDisplay = ['serialno', 'title', 'actions'];
   dataSource!: MatTableDataSource<any>;
   loading = false;
   searchKey: string = '';
@@ -25,7 +24,7 @@ export class SongsComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private fileService: FileService, private dialog: MatDialog) {}
+  constructor(private fileService: FileService, private router: Router) {}
 
   ngOnInit(): void {
     this.reloadSongs();
@@ -53,15 +52,6 @@ export class SongsComponent implements OnInit {
   }
 
   viewSongs(songs: Songs) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.data = songs;
-
-    this.dialog
-      .open(SongstaComponent, dialogConfig)
-      .afterClosed()
-      .subscribe(() => {
-        this.onSearchClear();
-      });
+    this.router.navigate(['/songs', songs.serialno]);
   }
 }

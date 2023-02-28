@@ -14,6 +14,8 @@ import { QandaComponent } from './components/qanda/qanda.component';
 import { WtbvideoComponent } from './components/wtbvideo/wtbvideo.component';
 import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
 import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
+import { QandaDetailComponent } from './components/qanda-detail/qanda-detail.component';
+import { SongsDetailComponent } from './components/songs-detail/songs-detail.component';
 
 const routes: Routes = [
   {
@@ -45,12 +47,20 @@ const routes: Routes = [
     component: SongsComponent,
   },
   {
+    path: 'songs/:serialno',
+    component: SongsDetailComponent,
+  },
+  {
     path: 'wtbaudio',
     component: WtbaudioComponent,
   },
   {
     path: 'qanda',
     component: QandaComponent,
+  },
+  {
+    path: 'qanda/:serialno',
+    component: QandaDetailComponent,
   },
   {
     path: 'wtbvideo',
