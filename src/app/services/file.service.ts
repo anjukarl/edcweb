@@ -11,6 +11,7 @@ import {
   DailyWord,
   Message,
   Qanda,
+  Sermon,
   Songs,
   Track,
   Videos,
@@ -21,6 +22,13 @@ import {
 })
 export class FileService {
   constructor(private db: AngularFirestore) {}
+
+  loadSermons(): Observable<Sermon[]> {
+    return this.db
+      .collection('sermons', (ref) => ref.orderBy('series'))
+      .get()
+      .pipe(map((results) => this.convertSnaps<Sermon>(results)));
+  }
 
   loadMessages(): Observable<Message[]> {
     return this.db

@@ -27,21 +27,19 @@
     </div>
 
     <table mat-table [dataSource]="dataSource" matSort>
-      <ng-container matColumnDef="thumbnail">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Thumbnail</th>
-        <td mat-cell *matCellDef="let video">
-          <img [src]="video.thumbnail" alt="video" (click)="playVideo(video)" />
-        </td>
+      <ng-container matColumnDef="series">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Series</th>
+        <td mat-cell *matCellDef="let sermon">{{ sermon.series }}</td>
       </ng-container>
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
-        <td mat-cell *matCellDef="let video">{{ video.title }}</td>
+        <td mat-cell *matCellDef="let sermon">{{ sermon.title }}</td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Play</th>
-        <td mat-cell *matCellDef="let video">
-          <button mat-icon-button (click)="playVideo(video)">
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button color="primary" (click)="playSermon(row)">
             <mat-icon>volume_up</mat-icon>
           </button>
         </td>
@@ -57,9 +55,15 @@
 
     <mat-paginator
       [pageSizeOptions]="[5, 10, 20]"
-      [pageSize]="10"
+      [pageSize]="5"
       showFirstLastButtons
     >
     </mat-paginator>
+  </div>
+  <div
+    *ngIf="activeSermon"
+    class="container d-flex justify-content-center px-5 mb-5"
+  >
+    <audio controls autoplay [src]="playingSermon.path"></audio>
   </div>
 </div>

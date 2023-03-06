@@ -33,6 +33,7 @@ import { SongstaComponent } from './components/songsta/songsta.component';
 import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
 import { QandaDetailComponent } from './components/qanda-detail/qanda-detail.component';
 import { SongsDetailComponent } from './components/songs-detail/songs-detail.component';
+import { SermonaudioComponent } from './components/sermonaudio/sermonaudio.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { SongsDetailComponent } from './components/songs-detail/songs-detail.com
     WordftdDetailComponent,
     QandaDetailComponent,
     SongsDetailComponent,
+    SermonaudioComponent,
   ],
   imports: [
     BrowserModule,
