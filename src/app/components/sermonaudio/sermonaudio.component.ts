@@ -3,6 +3,13 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { finalize } from 'rxjs';
 
 import { Sermon } from '../../shared/models';
@@ -12,12 +19,20 @@ import { FileService } from '../../services/file.service';
   selector: 'app-sermonaudio',
   templateUrl: './sermonaudio.component.html',
   styleUrls: ['./sermonaudio.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('0.5s')),
+    ]),
+  ],
 })
 export class SermonaudioComponent implements OnInit {
   heading = 'Audio Sermons';
 
   columnsToDisplay = ['series', 'title', 'actions'];
   dataSource!: MatTableDataSource<any>;
+  expandedElement: Sermon | null;
   loading = false;
   searchKey: string = '';
   currentSermon = false;
