@@ -15,7 +15,7 @@ import { VideoDialogComponent } from '../../shared/video-dialog/video-dialog.com
   styleUrls: ['./resources.component.scss'],
 })
 export class ResourcesComponent implements OnInit {
-  heading = 'Messages from other servants of God';
+  heading = 'Video Messages from other servants of God';
 
   columnsToDisplay = ['speaker', 'title', 'actions'];
   dataSource!: MatTableDataSource<any>;

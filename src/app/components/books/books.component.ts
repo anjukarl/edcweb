@@ -24,7 +24,6 @@ export class BooksComponent implements OnInit {
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((pdflist) => {
         this.books = pdflist;
-        console.log('Books: ', this.books);
       });
   }
 }

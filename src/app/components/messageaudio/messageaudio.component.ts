@@ -2,47 +2,31 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { Router } from '@angular/router';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { finalize } from 'rxjs';
 
-import { Sermon } from '../../shared/models';
+import { MessageAudio } from '../../shared/models';
 import { FileService } from '../../services/file.service';
 
 @Component({
-  selector: 'app-sermonaudio',
-  templateUrl: './sermonaudio.component.html',
-  styleUrls: ['./sermonaudio.component.scss'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0' })),
-      state('expanded', style({ height: '*' })),
-      transition('expanded <=> collapsed', animate('0.2s')),
-    ]),
-  ],
+  selector: 'app-messageaudio',
+  templateUrl: './messageaudio.component.html',
+  styleUrls: ['./messageaudio.component.scss'],
 })
-export class SermonaudioComponent implements OnInit {
-  heading = 'Audio Sermons';
+export class MessageaudioComponent implements OnInit {
+  heading = 'Audio Messages from other servants of God';
 
-  columnsToDisplay = ['series', 'title', 'actions'];
+  columnsToDisplay = ['speaker', 'title', 'actions'];
   dataSource!: MatTableDataSource<any>;
-  expandedElement: Sermon | null;
   loading = false;
   searchKey: string = '';
   currentSermon = false;
   activeSermon = false;
-  playingSermon!: Sermon;
+  playingSermon!: MessageAudio;
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private fileService: FileService, private router: Router) {}
+  constructor(private fileService: FileService) {}
 
   ngOnInit(): void {
     this.reloadSermons();
@@ -51,7 +35,7 @@ export class SermonaudioComponent implements OnInit {
   reloadSermons() {
     this.loading = true;
     this.fileService
-      .loadSermons()
+      .loadMessagesaudio()
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((trackList) => {
         this.dataSource = new MatTableDataSource(trackList);
@@ -69,11 +53,7 @@ export class SermonaudioComponent implements OnInit {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
-  onSelectSermon() {
-    this.currentSermon = true;
-  }
-
-  playSermon(sermon: Sermon) {
+  playSermon(sermon: MessageAudio) {
     this.activeSermon = true;
     this.playingSermon = sermon;
   }

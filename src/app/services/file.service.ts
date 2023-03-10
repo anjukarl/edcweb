@@ -10,6 +10,7 @@ import {
   Bookpdf,
   DailyWord,
   Message,
+  MessageAudio,
   Qanda,
   Sermon,
   Songs,
@@ -37,9 +38,16 @@ export class FileService {
       .pipe(map((results) => this.convertSnaps<Message>(results)));
   }
 
+  loadMessagesaudio(): Observable<MessageAudio[]> {
+    return this.db
+      .collection('messagesaudio', (ref) => ref.orderBy('speaker'))
+      .get()
+      .pipe(map((results) => this.convertSnaps<MessageAudio>(results)));
+  }
+
   loadSongs(): Observable<Songs[]> {
     return this.db
-      .collection('songs')
+      .collection('songs', (ref) => ref.orderBy('serialno'))
       .get()
       .pipe(map((results) => this.convertSnaps<Songs>(results)));
   }
