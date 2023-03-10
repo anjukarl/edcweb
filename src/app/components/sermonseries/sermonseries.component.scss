@@ -1,0 +1,16 @@
+.search-form-field {
+  font-size: clamp(0.5rem, 1.1vw, 2rem);
+}
+
+.backbutton {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  background-color: #569671;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .table {
+    width: 92vw;
+  }
+}

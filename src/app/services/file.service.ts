@@ -13,6 +13,7 @@ import {
   MessageAudio,
   Qanda,
   Sermon,
+  Series,
   Songs,
   Track,
   Videos,
@@ -24,11 +25,18 @@ import {
 export class FileService {
   constructor(private db: AngularFirestore) {}
 
-  loadSermons(): Observable<Sermon[]> {
+  loadSermons(series: Series): Observable<Sermon[]> {
     return this.db
-      .collection('sermons', (ref) => ref.orderBy('series'))
+      .collection('sermons', (ref) => ref.where('series', '==', series.text))
       .get()
       .pipe(map((results) => this.convertSnaps<Sermon>(results)));
+  }
+
+  loadSermonSeries(): Observable<Series[]> {
+    return this.db
+      .collection('series', (ref) => ref.orderBy('text'))
+      .get()
+      .pipe(map((results) => this.convertSnaps<Series>(results)));
   }
 
   loadMessages(): Observable<Message[]> {

@@ -16,8 +16,8 @@ import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
 import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
 import { QandaDetailComponent } from './components/qanda-detail/qanda-detail.component';
 import { SongsDetailComponent } from './components/songs-detail/songs-detail.component';
-import { SermonaudioComponent } from './components/sermonaudio/sermonaudio.component';
 import { MessageaudioComponent } from './components/messageaudio/messageaudio.component';
+import { SermonseriesComponent } from './components/sermonseries/sermonseries.component';
 
 const routes: Routes = [
   {
@@ -57,8 +57,8 @@ const routes: Routes = [
     component: WtbaudioComponent,
   },
   {
-    path: 'sermonaudio',
-    component: SermonaudioComponent,
+    path: 'sermonseries',
+    component: SermonseriesComponent,
   },
   {
     path: 'qanda',
