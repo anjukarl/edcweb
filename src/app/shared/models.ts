@@ -62,6 +62,7 @@ export interface Sermon {
   title: string;
   series: string;
   path: string;
+  videoUrl: string;
 }
 
 export interface Songs {

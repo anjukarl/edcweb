@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {
   animate,
   state,
@@ -14,6 +14,7 @@ import { finalize } from 'rxjs';
 
 import { Sermon, Series } from '../../shared/models';
 import { FileService } from '../../services/file.service';
+import { VideoDialogComponent } from '../../shared/video-dialog/video-dialog.component';
 
 @Component({
   selector: 'app-sermonaudio',
@@ -44,7 +45,7 @@ export class SermonaudioComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator1!: MatPaginator;
 
-  constructor(private fileService: FileService, private router: Router) {}
+  constructor(private fileService: FileService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.reloadSermons();
@@ -76,7 +77,20 @@ export class SermonaudioComponent implements OnInit {
   }
 
   playSermon(sermon: Sermon) {
-    this.activeSermon = true;
-    this.playingSermon = sermon;
+    if (sermon.path) {
+      this.activeSermon = true;
+      this.playingSermon = sermon;
+    } else {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.data = sermon.videoUrl;
+
+      this.dialog
+        .open(VideoDialogComponent, dialogConfig)
+        .afterClosed()
+        .subscribe(() => {
+          this.onSearchClear();
+        });
+    }
   }
 }
