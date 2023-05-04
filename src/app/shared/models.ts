@@ -89,3 +89,19 @@ export interface Videos {
   type?: string;
   videoId: string;
 }
+
+export interface YTPlaylist {
+  id?: string;
+  playlistId: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+}
+
+export interface YTVideo {
+  id?: string;
+  playlistId: string;
+  title: string;
+  thumbnail: string;
+  videoId: string;
+}

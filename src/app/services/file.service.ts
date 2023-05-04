@@ -17,6 +17,8 @@ import {
   Songs,
   Track,
   Videos,
+  YTPlaylist,
+  YTVideo,
 } from '../shared/models';
 
 @Injectable({
@@ -24,6 +26,22 @@ import {
 })
 export class FileService {
   constructor(private db: AngularFirestore) {}
+
+  loadYTVideo(playlist: YTPlaylist): Observable<YTVideo[]> {
+    return this.db
+      .collection('videos', (ref) =>
+        ref.where('playlistId', '==', playlist.playlistId)
+      )
+      .get()
+      .pipe(map((results) => this.convertSnaps<YTVideo>(results)));
+  }
+
+  loadYTPlaylist(): Observable<YTPlaylist[]> {
+    return this.db
+      .collection('vplaylist', (ref) => ref.orderBy('title'))
+      .get()
+      .pipe(map((results) => this.convertSnaps<YTPlaylist>(results)));
+  }
 
   loadSermons(series: Series): Observable<Sermon[]> {
     return this.db

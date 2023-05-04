@@ -18,6 +18,7 @@ import { QandaDetailComponent } from './components/qanda-detail/qanda-detail.com
 import { SongsDetailComponent } from './components/songs-detail/songs-detail.component';
 import { MessageaudioComponent } from './components/messageaudio/messageaudio.component';
 import { SermonseriesComponent } from './components/sermonseries/sermonseries.component';
+import { YtplaylistComponent } from './components/ytplaylist/ytplaylist.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'videos',
     component: VideosComponent,
+  },
+  {
+    path: 'ytplaylist',
+    component: YtplaylistComponent,
   },
   {
     path: 'wordftd',
