@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable, Subscription, take } from 'rxjs';
 
 import { FileService } from '../../services/file.service';
@@ -29,16 +29,16 @@ export class WtbaudioComponent implements OnInit {
   testaSubscription: Subscription = new Subscription();
   bookSubscription: Subscription = new Subscription();
 
-  form = new UntypedFormGroup({
-    testament: new UntypedFormControl('old', {
+  form = new FormGroup({
+    testament: new FormControl('old', {
       updateOn: 'blur',
       validators: Validators.required,
     }),
-    book: new UntypedFormControl('', {
+    book: new FormControl('', {
       updateOn: 'blur',
       validators: Validators.required,
     }),
-    track: new UntypedFormControl('', {
+    track: new FormControl('', {
       updateOn: 'blur',
       validators: Validators.required,
     }),
