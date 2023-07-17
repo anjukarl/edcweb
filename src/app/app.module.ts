@@ -7,9 +7,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
-// import { YouTubePlayerModule } from '@angular/youtube-player';
 
-import { AppComponent } from './app.component';
+import { AppComponent, SafePipe, TrustHtmlPipe } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
@@ -29,6 +28,16 @@ import { QandataComponent } from './components/qandata/qandata.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { VideoDialogComponent } from './shared/video-dialog/video-dialog.component';
+import { SongsComponent } from './components/songs/songs.component';
+import { SongstaComponent } from './components/songsta/songsta.component';
+import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
+import { QandaDetailComponent } from './components/qanda-detail/qanda-detail.component';
+import { SongsDetailComponent } from './components/songs-detail/songs-detail.component';
+import { SermonaudioComponent } from './components/sermonaudio/sermonaudio.component';
+import { MessageaudioComponent } from './components/messageaudio/messageaudio.component';
+import { SermonseriesComponent } from './components/sermonseries/sermonseries.component';
+import { YtplaylistComponent } from './components/ytplaylist/ytplaylist.component';
+import { YtvideosComponent } from './components/ytvideos/ytvideos.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +59,18 @@ import { VideoDialogComponent } from './shared/video-dialog/video-dialog.compone
     WordftdtaComponent,
     QandataComponent,
     VideoDialogComponent,
+    SafePipe,
+    TrustHtmlPipe,
+    SongsComponent,
+    SongstaComponent,
+    WordftdDetailComponent,
+    QandaDetailComponent,
+    SongsDetailComponent,
+    SermonaudioComponent,
+    MessageaudioComponent,
+    SermonseriesComponent,
+    YtplaylistComponent,
+    YtvideosComponent,
   ],
   imports: [
     BrowserModule,

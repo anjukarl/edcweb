@@ -1,4 +1,7 @@
-<!-- <youtube-player [videoId]="vidId"> </youtube-player> -->
+<div mat-dialog-content>
+  <iframe class="ifram" [src]="vidUrl | safe"> </iframe>
+</div>
+
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button class="video-button" (click)="onNoClick()">Close</button>
 </div>

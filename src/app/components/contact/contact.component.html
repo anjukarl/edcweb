@@ -1,49 +1,32 @@
 <app-header></app-header>
 <app-subhead [title]="verse" [heading]="heading"></app-subhead>
 
-<div class="container">
-  <div class="row p-5">
-    <div class="col-md-6 p-3">
-      <a href="#"
-        ><img
-          src="https://via.placeholder.com/400x400?text='MAP'"
-          alt="placeholder"
-      /></a>
-    </div>
-    <div class="col-md-6 p-3">
-      <div class="card shadow">
-        <div class="card-body">
-          <div class="row my-4">
-            <div class="col-4 mb-5">
-              <i class="bi bi-person-lines-fill"></i>
-              <h6 class="contact-title px-4">Address:</h6>
-            </div>
-            <div class="col-8">
-              __________________________________________________
-              __________________________________________________
-              __________________________________________________
-            </div>
-          </div>
-          <div class="row my-4">
-            <div class="col-4">
-              <i class="bi bi-telephone-fill"></i>
-              <h6 class="contact-title px-4">Mobile:</h6>
-            </div>
-            <div class="col-8">
-              <h6>+91 94488 49211</h6>
-            </div>
-          </div>
-          <div class="row my-4">
-            <div class="col-4">
-              <i class="bi bi-envelope-fill"></i>
-              <h6 class="contact-title px-4">Email:</h6>
-            </div>
-            <div class="col-8">
-              <h6>edchelladurai@gmail.com</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="container cont">
+  <div class="cont-details">
+    <mat-card class="card-details text-center shadow">
+      <mat-card-subtitle>ADDRESS</mat-card-subtitle>
+      <mat-card-content>
+        <i class="bi bi-person-lines-fill"></i>
+        ------------------------------------------
+        ------------------------------------------
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-details text-center shadow">
+      <mat-card-subtitle>MOBILE</mat-card-subtitle>
+      <mat-card-content>
+        <i class="bi bi-telephone-fill"></i>
+        +91 94488 49211
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-details text-center shadow">
+      <mat-card-subtitle>EMAIL</mat-card-subtitle>
+      <mat-card-content>
+        <i class="bi bi-envelope-fill"></i>
+        edchelladurai@gmail.com
+      </mat-card-content>
+    </mat-card>
+    <!-- <mat-card class="map-card card-details">
+      <mat-card-title>Location Map</mat-card-title>
+    </mat-card> -->
   </div>
 </div>

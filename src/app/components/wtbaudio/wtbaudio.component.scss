@@ -1,3 +1,22 @@
 .formgroup {
   display: block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.card-width {
+  width: 60vw;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .card-width {
+    width: 92vw;
+  }
+
+  .formgroup {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }

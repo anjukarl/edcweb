@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   heading = 'about e d chelladurai';
-  verse =
-    'In the beginning was the Word, and the Word was with God, and the Word was God.';
 
   constructor() {}
 

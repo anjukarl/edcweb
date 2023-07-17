@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { finalize } from 'rxjs';
+
+import { FileService } from '../../services/file.service';
+import { Bookpdf } from '../../shared/models';
 
 @Component({
   selector: 'app-books',
@@ -7,10 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
   heading = 'Books';
-  verse =
-    'In the beginning was the Word, and the Word was with God, and the Word was God.';
 
-  constructor() {}
+  books: Bookpdf[] = [];
+  loading = false;
 
-  ngOnInit(): void {}
+  constructor(private fileService: FileService) {}
+
+  ngOnInit(): void {
+    this.loading = true;
+    this.fileService
+      .loadBookpdfs()
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe((pdflist) => {
+        this.books = pdflist;
+      });
+  }
 }

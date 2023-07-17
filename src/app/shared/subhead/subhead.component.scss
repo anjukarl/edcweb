@@ -5,16 +5,77 @@
       rgb(242, 242, 242, 0.8)
     ),
     url(../../../assets/homepic.jpg);
-  padding: 8rem 10rem;
+  background-size: cover;
+  background-position: center;
+  padding: 6vw 5vw;
   align-items: center;
-  height: 50vh;
+  height: 25vw;
 }
 
-.title {
+.heading {
   text-align: center;
   text-transform: uppercase;
-  padding: 2rem;
-  font-size: 1.5rem;
+  padding: 2rem 2rem 0 2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin: auto;
+  // max-height: 10vh;
+}
+
+.ref-animated {
+  // font-size: clamp(0.4rem, 1vw, 1rem);
+  font-size: 1rem;
+  animation: moveInBottom 2s ease-out;
+  // animation-fill-mode: backwards;
+}
+
+.verse-animated {
+  display: block;
+  // font-size: clamp(0.6rem, 2vw, 2rem);
+  font-size: 1.8rem;
+  font-weight: 400;
+  animation: moveInLeft 2s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .subhead {
+    height: 35vw;
+  }
+
+  .ref-animated {
+    font-size: 0.6rem;
+  }
+
+  .verse-animated {
+    font-size: 0.8rem;
+  }
+
+  .heading {
+    font-size: 1rem;
+  }
 }

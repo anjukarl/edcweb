@@ -1,3 +1,4 @@
+import { SongsComponent } from './components/songs/songs.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,9 +12,13 @@ import { WordftdvComponent } from './components/wordftdv/wordftdv.component';
 import { BooksComponent } from './components/books/books.component';
 import { QandaComponent } from './components/qanda/qanda.component';
 import { WtbvideoComponent } from './components/wtbvideo/wtbvideo.component';
-import { QandataComponent } from './components/qandata/qandata.component';
 import { WtbaudioComponent } from './components/wtbaudio/wtbaudio.component';
-import { WordftdtaComponent } from './components/wordftdta/wordftdta.component';
+import { WordftdDetailComponent } from './components/wordftd-detail/wordftd-detail.component';
+import { QandaDetailComponent } from './components/qanda-detail/qanda-detail.component';
+import { SongsDetailComponent } from './components/songs-detail/songs-detail.component';
+import { MessageaudioComponent } from './components/messageaudio/messageaudio.component';
+import { SermonseriesComponent } from './components/sermonseries/sermonseries.component';
+import { YtplaylistComponent } from './components/ytplaylist/ytplaylist.component';
 
 const routes: Routes = [
   {
@@ -29,28 +34,44 @@ const routes: Routes = [
     component: VideosComponent,
   },
   {
+    path: 'ytplaylist',
+    component: YtplaylistComponent,
+  },
+  {
     path: 'wordftd',
     component: WordftdComponent,
   },
   {
-    path: 'wordftdta/:id',
-    component: WordftdtaComponent,
+    path: 'wordftd/:serialno',
+    component: WordftdDetailComponent,
   },
   {
     path: 'wordftdv',
     component: WordftdvComponent,
   },
   {
+    path: 'songs',
+    component: SongsComponent,
+  },
+  {
+    path: 'songs/:serialno',
+    component: SongsDetailComponent,
+  },
+  {
     path: 'wtbaudio',
     component: WtbaudioComponent,
+  },
+  {
+    path: 'sermonseries',
+    component: SermonseriesComponent,
   },
   {
     path: 'qanda',
     component: QandaComponent,
   },
   {
-    path: 'qandata/:id',
-    component: QandataComponent,
+    path: 'qanda/:serialno',
+    component: QandaDetailComponent,
   },
   {
     path: 'wtbvideo',
@@ -65,6 +86,10 @@ const routes: Routes = [
     component: ResourcesComponent,
   },
   {
+    path: 'messageaudio',
+    component: MessageaudioComponent,
+  },
+  {
     path: 'contact',
     component: ContactComponent,
   },
@@ -76,7 +101,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

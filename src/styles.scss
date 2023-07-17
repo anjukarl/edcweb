@@ -29,6 +29,8 @@ body {
   height: 55vh;
 }
 
+/* Menu - dropdown menu */
+
 .dropdown-menu li {
   position: relative;
   width: 80%;
@@ -37,7 +39,7 @@ body {
 .dropdown-menu .dropdown-submenu {
   display: none;
   position: absolute;
-  left: 100%;
+  left: 50%;
   top: -7px;
   font-size: 0.9rem;
 }
@@ -47,6 +49,7 @@ body {
 }
 
 /* filter controls */
+
 .search-div {
   margin-top: 20px;
   margin-left: 20px;
@@ -71,6 +74,8 @@ body {
   height: 32px;
   width: 32px;
 }
+
+/* miscellaneous */
 
 .spinner {
   margin: auto;

@@ -2,12 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import {
-  MatDialog,
-  MatDialogConfig,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { finalize } from 'rxjs';
 
 import { Videos } from '../../shared/models';
@@ -62,8 +57,7 @@ export class WtbvideoComponent implements OnInit {
   playVideo(vid: Videos) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.minWidth = '640px';
-    dialogConfig.data = vid;
+    dialogConfig.data = vid.videoId;
 
     this.dialog
       .open(VideoDialogComponent, dialogConfig)

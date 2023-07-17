@@ -1,0 +1,36 @@
+<app-header></app-header>
+<app-subhead [heading]="heading"></app-subhead>
+<br /><br />
+<div class="container">
+  <div class="qa text-center">
+    <div [innerHTML]="song['text']"></div>
+  </div>
+  <br /><br />
+  <mat-divider></mat-divider>
+  <br />
+  <div class="d-flex flex-row justify-content-around">
+    <div class="col-md-6 text-center d-inline">
+      <button
+        *ngIf="prevAvailable"
+        class="btn btn-secondary"
+        type="button"
+        (click)="goPrevious()"
+      >
+        Previous
+        <i class="bi bi-arrow-left"></i>
+      </button>
+    </div>
+    <div class="col-md-6 text-center d-inline">
+      <button
+        *ngIf="nextAvailable"
+        class="btn btn-secondary"
+        type="button"
+        (click)="goNext()"
+      >
+        Next
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  <br /><br />
+</div>

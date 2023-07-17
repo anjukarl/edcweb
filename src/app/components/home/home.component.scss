@@ -1,5 +1,5 @@
 .homepic {
-  height: 40vw;
+  height: 60vh;
   background-image: linear-gradient(
       to bottom,
       rgb(86, 150, 113, 0.9),
@@ -36,13 +36,13 @@
 
 .home-cont {
   background-color: rgb(253, 237, 175);
-  padding: 2rem 4rem;
+  // padding: 2rem 3rem;
   align-items: center;
 
   p {
     font-size: 0.9rem;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   a {
@@ -79,4 +79,46 @@
 
 .ddmenu {
   font-size: 0.9rem;
+}
+
+.navbar-toggler {
+  font-size: 3vw;
+  background-color: rgb(86, 150, 113);
+}
+
+//
+// media queries
+//
+
+@media (max-width: 900px) {
+  .homepic {
+    height: 35vh;
+  }
+
+  .mainlogo {
+    width: 80vw;
+  }
+
+  .title {
+    padding: 1.5rem;
+  }
+
+  .hd-logo {
+    width: 10vw;
+  }
+
+  .home-cont {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .toggler {
+    width: 25px;
+  }
+
+  #navmenu {
+    background-color: rgb(86, 150, 113);
+    z-index: 99;
+  }
 }

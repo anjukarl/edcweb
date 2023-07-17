@@ -1,0 +1,27 @@
+.close-button {
+  background-color: rgb(86, 150, 113, 0.9);
+  color: #fff;
+}
+
+.qa {
+  padding-left: 2em;
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.qt {
+  padding-left: 1.8em;
+}
+
+@media (max-width: 900px) {
+  .mat-dialog-content {
+    width: 90vw;
+    height: 50vh;
+  }
+
+  .qa {
+    padding-right: 12vw;
+    padding-left: 5vw;
+  }
+}

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { Qanda } from '../../shared/models';
 
 @Component({
   selector: 'app-qandata',
@@ -6,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./qandata.component.scss'],
 })
 export class QandataComponent implements OnInit {
-  heading = 'Questions & Answers - Audio / Text';
-  verse =
-    'In the beginning was the Word, and the Word was with God, and the Word was God.';
-
-  constructor() {}
+  constructor(
+    public dialogRef: MatDialogRef<QandataComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Qanda
+  ) {}
 
   ngOnInit(): void {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

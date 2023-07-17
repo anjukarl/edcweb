@@ -15,7 +15,7 @@
           data-bs-toggle="collapse"
           data-bs-target="#navmenu"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon toggler"></span>
         </button>
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item px-2">
               <a
-                routerLink="/videos"
+                routerLink="/ytplaylist"
                 class="nav-link text-secondary"
                 routerLinkActive="active-link"
                 >Messages</a
@@ -101,6 +101,20 @@
                         >Q and A</a
                       >
                     </li>
+                    <li>
+                      <a
+                        routerLink="/sermonseries"
+                        class="dropdown-item text-decoration-none"
+                        >Sermons</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item text-decoration-none"
+                        routerLink="/messageaudio"
+                        >Other's Messages</a
+                      >
+                    </li>
                   </ul>
                 </li>
                 <li>
@@ -136,6 +150,13 @@
                         >Sermons</a
                       >
                     </li>
+                    <li>
+                      <a
+                        class="dropdown-item text-decoration-none"
+                        routerLink="/resources"
+                        >Other's Messages</a
+                      >
+                    </li>
                   </ul>
                 </li>
                 <li>
@@ -148,15 +169,15 @@
                 <li>
                   <a
                     class="dropdown-item text-decoration-none"
-                    routerLink="/qanda"
-                    >Q and A</a
+                    routerLink="/songs"
+                    >Songs</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item text-decoration-none"
-                    routerLink="/resources"
-                    >Other's Messages</a
+                    routerLink="/qanda"
+                    >Q and A</a
                   >
                 </li>
               </ul>
@@ -175,7 +196,7 @@
     </nav>
   </div>
 
-  <div class="edcimg mt-4">
+  <div class="edcimg mt-1">
     <img src="../../../assets/edclogo.png" alt="Logo" class="mainlogo" />
   </div>
 </div>
@@ -197,7 +218,7 @@
             is lengthy, and hence the study is sometimes divided into more than
             one study in a chapter for clarity.
           </p>
-          <a routerLink="gentorev" class="btn btn-primary text-light"
+          <a routerLink="wtbvideo" class="btn btn-primary text-light"
             >Learn more...</a
           >
         </div>
@@ -256,13 +277,13 @@
     </div>
   </div>
 </main>
-<div class="vh-10 home-cont text-center">
+<div class="vh-10 px-3 px-md-5 py-4 home-cont text-center">
   <h4 class="text-dark text-uppercase p-3 mb-0">Get in touch with us</h4>
-  <p class="text-dark pb-2 px-4">
+  <p class="text-dark pb-2 px-md-4">
     If you would like to have more information or would simply like to
-    communicate with us, please click on the button below to fill in a simple
-    form. Alternately, you could connect with us on social media using the links
-    below.
+    communicate with us, please click on the button below to see contact
+    details. Alternately, you could connect with us on social media using the
+    links below.
   </p>
   <a routerLink="contact" class="btn btn-primary text-light px-xxl-4 shadow"
     >Contact us</a

@@ -11,12 +11,15 @@
 }
 
 .hd-logo {
-  width: 6vw;
+  // width: clamp(4vw, 6vw, 8vw);
+  width: 5rem;
   display: inline-block;
 }
 
 #navmenu {
   font-size: 0.9rem;
+  // background-color: rgb(86, 150, 113);
+  z-index: 10;
 
   a:hover {
     text-decoration: underline;
@@ -27,11 +30,22 @@
   font-weight: bold;
 }
 
-.mainlogo {
-  width: 60vw;
-}
-
 .ddmenu {
   font-size: 0.9rem;
   text-decoration: none;
+}
+
+.navbar-toggler {
+  font-size: 3vw;
+  background-color: rgb(86, 150, 113);
+}
+
+@media (max-width: 900px) {
+  .hd-logo {
+    width: 1.8rem;
+  }
+
+  #navmenu {
+    background-color: rgb(86, 150, 113);
+  }
 }
