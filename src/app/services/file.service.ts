@@ -150,6 +150,15 @@ export class FileService {
       .pipe(map((results) => this.convertSnaps<Videos>(results)));
   }
 
+  loadPlVideos(): Observable<Videos[]> {
+    return this.db
+      .collection('videos', (ref) =>
+        ref.where('playlistId', '==', 'PL_zVRulfx_gCqKSkW47fkP2V1eln_zLy4')
+      )
+      .get()
+      .pipe(map((results) => this.convertSnaps<Videos>(results)));
+  }
+
   convertSnaps<T>(results: { docs: any[] }) {
     return <T[]>results.docs.map((snap) => ({
       id: snap.id,

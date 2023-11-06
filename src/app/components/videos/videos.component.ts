@@ -35,7 +35,7 @@ export class VideosComponent implements OnInit {
   reloadVideos() {
     this.loading = true;
     this.fileService
-      .loadVideos()
+      .loadPlVideos()
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((results) => {
         this.dataSource = new MatTableDataSource(results);
