@@ -19,6 +19,7 @@ import { SongsDetailComponent } from './components/songs-detail/songs-detail.com
 import { MessageaudioComponent } from './components/messageaudio/messageaudio.component';
 import { SermonseriesComponent } from './components/sermonseries/sermonseries.component';
 import { YtplaylistComponent } from './components/ytplaylist/ytplaylist.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'videos',
     component: VideosComponent,
+  },
+  {
+    path: 'privacy',
+    component: PrivacyComponent,
   },
   {
     path: 'ytplaylist',

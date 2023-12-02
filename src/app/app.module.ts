@@ -38,6 +38,7 @@ import { MessageaudioComponent } from './components/messageaudio/messageaudio.co
 import { SermonseriesComponent } from './components/sermonseries/sermonseries.component';
 import { YtplaylistComponent } from './components/ytplaylist/ytplaylist.component';
 import { YtvideosComponent } from './components/ytvideos/ytvideos.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { YtvideosComponent } from './components/ytvideos/ytvideos.component';
     SermonseriesComponent,
     YtplaylistComponent,
     YtvideosComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
