@@ -14,7 +14,7 @@ import { finalize } from 'rxjs';
 
 import { Sermon, Series } from '../../shared/models';
 import { FileService } from '../../services/file.service';
-import { VideoDialogComponent } from '../../shared/video-dialog/video-dialog.component';
+import { VideoDialogComponent } from 'src/app/shared/video-dialog/video-dialog.component';
 
 @Component({
   selector: 'app-sermonaudio',

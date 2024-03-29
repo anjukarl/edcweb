@@ -2,41 +2,43 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { finalize } from 'rxjs';
 
-import { YTPlaylist } from '../../shared/models';
+import { Videos } from '../../shared/models';
 import { FileService } from '../../services/file.service';
+import { VideoDialogComponent } from '../../shared/video-dialog/video-dialog.component';
 
 @Component({
-  selector: 'app-ytplaylist',
-  templateUrl: './ytplaylist.component.html',
-  styleUrls: ['./ytplaylist.component.scss'],
+  selector: 'app-audios',
+  templateUrl: './audios.component.html',
+  styleUrls: ['./audios.component.scss'],
 })
-export class YtplaylistComponent implements OnInit {
-  heading = 'Messages Playlists';
+export class AudiosComponent implements OnInit {
+  heading = 'Audio Sermons';
 
   columnsToDisplay = ['thumbnail', 'title', 'actions'];
   dataSource!: MatTableDataSource<any>;
   loading = false;
   searchKey: string = '';
-  activePlaylist: YTPlaylist;
+  video!: Videos;
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private fileService: FileService) {}
+  constructor(private fileService: FileService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.reloadYTPlaylist();
+    this.reloadVideos();
   }
 
-  reloadYTPlaylist() {
+  reloadVideos() {
     this.loading = true;
     this.fileService
-      .loadYTPlaylist()
+      .loadPlAudios()
       .pipe(finalize(() => (this.loading = false)))
-      .subscribe((playlist) => {
-        this.dataSource = new MatTableDataSource(playlist);
+      .subscribe((results) => {
+        this.dataSource = new MatTableDataSource(results);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       });
@@ -51,11 +53,16 @@ export class YtplaylistComponent implements OnInit {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
-  openPlaylist(playlist: YTPlaylist) {
-    this.activePlaylist = playlist;
-  }
+  playVideo(vid: Videos) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = vid.videoId;
 
-  backToPlaylist() {
-    this.activePlaylist = null;
+    this.dialog
+      .open(VideoDialogComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(() => {
+        this.onSearchClear();
+      });
   }
 }

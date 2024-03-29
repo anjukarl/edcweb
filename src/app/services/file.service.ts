@@ -150,10 +150,28 @@ export class FileService {
       .pipe(map((results) => this.convertSnaps<Videos>(results)));
   }
 
+  loadWTBVideos(): Observable<Videos[]> {
+    return this.db
+      .collection('videos', (ref) =>
+        ref.where('playlistId', '==', 'PL_zVRulfx_gBn8AL8LE36roOo0wyNMN93')
+      )
+      .get()
+      .pipe(map((results) => this.convertSnaps<Videos>(results)));
+  }
+
   loadPlVideos(): Observable<Videos[]> {
     return this.db
       .collection('videos', (ref) =>
         ref.where('playlistId', '==', 'PL_zVRulfx_gCqKSkW47fkP2V1eln_zLy4')
+      )
+      .get()
+      .pipe(map((results) => this.convertSnaps<Videos>(results)));
+  }
+
+  loadPlAudios(): Observable<Videos[]> {
+    return this.db
+      .collection('videos', (ref) =>
+        ref.where('playlistId', '==', 'PL_zVRulfx_gBoivZNgfeRGZAnenGaxYpt')
       )
       .get()
       .pipe(map((results) => this.convertSnaps<Videos>(results)));

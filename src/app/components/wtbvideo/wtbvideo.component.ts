@@ -36,7 +36,7 @@ export class WtbvideoComponent implements OnInit {
   reloadVideos() {
     this.loading = true;
     this.fileService
-      .loadVideos()
+      .loadWTBVideos()
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((results) => {
         this.dataSource = new MatTableDataSource(results);

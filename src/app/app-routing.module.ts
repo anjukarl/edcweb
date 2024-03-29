@@ -20,6 +20,7 @@ import { MessageaudioComponent } from './components/messageaudio/messageaudio.co
 import { SermonseriesComponent } from './components/sermonseries/sermonseries.component';
 import { YtplaylistComponent } from './components/ytplaylist/ytplaylist.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
+import { AudiosComponent } from './components/audios/audios.component';
 
 const routes: Routes = [
   {
@@ -67,9 +68,13 @@ const routes: Routes = [
     component: WtbaudioComponent,
   },
   {
-    path: 'sermonseries',
-    component: SermonseriesComponent,
+    path: 'audios',
+    component: AudiosComponent,
   },
+  // {
+  //   path: 'sermonseries',
+  //   component: SermonseriesComponent,
+  // },
   {
     path: 'qanda',
     component: QandaComponent,
