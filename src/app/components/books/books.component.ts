@@ -11,7 +11,7 @@ import { Bookpdf } from '../../shared/models';
 })
 export class BooksComponent implements OnInit {
   heading = 'Books';
-  noBooks = true;
+  noBooks = false;
   books: Bookpdf[] = [];
   loading = false;
 
@@ -24,8 +24,8 @@ export class BooksComponent implements OnInit {
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((pdflist) => {
         this.books = pdflist;
-        if (this.books.length > 0) {
-          this.noBooks = false;
+        if (this.books.length == 0) {
+          this.noBooks = true;
         }
       });
   }

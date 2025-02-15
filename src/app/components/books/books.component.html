@@ -2,6 +2,7 @@
 <app-subhead [heading]="heading"></app-subhead>
 
 <div class="booklist">
+  <mat-spinner class="spinner" [diameter]="30" *ngIf="loading"></mat-spinner>
   <h5 *ngIf="noBooks">There are no books currently.</h5>
   <mat-grid-list cols="5" rowHeight="1:2" gutterSize="10px">
     <mat-grid-tile *ngFor="let book of books">
