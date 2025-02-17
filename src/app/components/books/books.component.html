@@ -1,17 +1,30 @@
 <app-header></app-header>
 <app-subhead [heading]="heading"></app-subhead>
 
-<div class="booklist">
+<div #theContainer class="booklist">
   <mat-spinner class="spinner" [diameter]="30" *ngIf="loading"></mat-spinner>
   <h5 *ngIf="noBooks">There are no books currently.</h5>
-  <mat-grid-list cols="5" rowHeight="1:2" gutterSize="10px">
+  <mat-grid-list cols="{{ columnNum }}" rowHeight="1:2" gutterSize="20px">
     <mat-grid-tile *ngFor="let book of books">
-      <a [href]="book.filepath" target="_blank">
+      <!-- <a [href]="book.filepath" target="_blank">
         <img
           [src]="book.thumbpath"
           alt="Book"
           style="width: 100%; height: 100%; object-fit: cover"
       /></a>
+      <p>Title: {{ book.title }}</p> -->
+      <mat-card>
+        <a [href]="book.filepath" target="_blank">
+          <img
+            mat-card-image
+            [src]="book.thumbpath"
+            alt="Book"
+            style="width: 100%; height: 100%; object-fit: cover"
+        /></a>
+        <mat-card-content>
+          <p>Title: {{ book.title }}</p>
+        </mat-card-content>
+      </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
